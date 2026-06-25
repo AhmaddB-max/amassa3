@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.amassa.ch/sitemap.xml
+
+# Disallow backend
+Disallow: /backend/
+
+# Allow images
+Allow: /images/
+
+# Crawl-delay (optional, for courtesy)
+Crawl-delay: 1

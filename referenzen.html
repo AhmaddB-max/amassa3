@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("amassa-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referenzen & Partner | 62 Google 5-Sterne Bewertungen | AMASSA</title>
+    <meta name="description" content="AMASSA Referenzen: 62 Google Bewertungen mit 5 Sternen. Wetrok, Kärcher, Kränzle Partner. Zufriedene Kunden in St. Gallen, Zürich & der ganzen Schweiz." />
+    <meta name="keywords" content="AMASSA Bewertungen, Reinigung Referenzen St. Gallen, Kundenmeinungen, Wetrok Partner, Kärcher Partner" />
+    <link rel="canonical" href="https://www.amassa.ch/referenzen.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.amassa.ch/referenzen.html" />
+    <meta property="og:title" content="Referenzen & Partner | 62 Google 5-Sterne Bewertungen | AMASSA" />
+    <meta property="og:description" content="AMASSA Referenzen: 62 Google Bewertungen mit 5 Sternen. Wetrok, Kärcher, Kränzle Partner. Zufriedene Kunden in St. Gallen, Zürich & der ganzen Schweiz." />
+    <meta property="og:image" content="https://www.amassa.ch/images/og-image.jpg" />
+    <meta property="og:locale" content="de_CH" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-teal": "#5B9BD5",
+              "amassa-green": "#70AD47",
+              "amassa-accent": "#FFC000",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Preconnect to external resources -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="preconnect" href="https://unpkg.com">
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <style>
+      * { scroll-behavior: smooth; }
+      .nav-blur { backdrop-filter: blur(16px); background: rgba(255,255,255,0.96); }
+      .image-placeholder { background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%); display: flex; align-items: center; justify-content: center; border: 2px dashed #cbd5e0; color: #64748b; }
+      .review-card { transition: all 0.3s ease; }
+      .review-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+      .partner-logo { filter: grayscale(100%); opacity: 0.6; transition: all 0.3s ease; }
+      .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+      /* Hero Top Bar */
+      :root {
+        --primary: #2b4c7e;
+        --secondary: #5b9bd5;
+        --accent: #ffc000;
+        --text-primary: #1f2937;
+      }
+      .hero {
+        background: #ED2939;
+        padding: 10rem 2rem 6rem;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .hero .container { max-width: 1280px; margin: 0 auto; }
+      .hero h1,
+      .hero .hero-heading {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Grosskunden Section (standalone, after hero) */
+      .grosskunden-section {
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .grosskunden-label {
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1.75rem;
+      }
+      .grosskunden-section .swiper {
+        padding-bottom: 2.5rem;
+      }
+      .grosskunden-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .grosskunden-card:hover {
+        background: #eef3f8;
+        transform: translateY(-4px);
+        border-color: #2b4c7e;
+        box-shadow: 0 8px 24px rgba(43,76,126,0.1);
+      }
+      .grosskunden-card span {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #2b4c7e;
+        letter-spacing: 0.02em;
+      }
+      .grosskunden-section .swiper-pagination-bullet {
+        background: #cbd5e1;
+        opacity: 1;
+      }
+      .grosskunden-section .swiper-pagination-bullet-active {
+        background: #2b4c7e;
+      }
+      html[data-theme="dark"] .grosskunden-section {
+        background: #1a2332;
+        border-bottom-color: #2d3b4f;
+      }
+      html[data-theme="dark"] .grosskunden-label {
+        color: #94a3b8;
+      }
+      html[data-theme="dark"] .grosskunden-card {
+        background: #1e293b;
+        border-color: #2d3b4f;
+      }
+      html[data-theme="dark"] .grosskunden-card:hover {
+        background: #263548;
+        border-color: #5b9bd5;
+      }
+      html[data-theme="dark"] .grosskunden-card span {
+        color: #93c5fd;
+      }
+
+      /* ============ Dark / Light Mode ============ */
+      html[data-theme="dark"] {
+        color-scheme: dark;
+      }
+      html[data-theme="dark"] body {
+        background-color: #0f172a;
+      }
+      html[data-theme="dark"] .bg-white {
+        background-color: #1a2332 !important;
+      }
+      html[data-theme="dark"] .bg-gray-50 {
+        background-color: #141b2b !important;
+      }
+      html[data-theme="dark"] .bg-gray-100 {
+        background-color: #1e293b !important;
+      }
+      html[data-theme="dark"] .bg-blue-50 {
+        background-color: rgba(91, 155, 213, 0.12) !important;
+      }
+      html[data-theme="dark"] .bg-blue-100 {
+        background-color: rgba(91, 155, 213, 0.2) !important;
+      }
+      html[data-theme="dark"] .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+      html[data-theme="dark"] .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+      html[data-theme="dark"] .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+      html[data-theme="dark"] .text-gray-600,
+      html[data-theme="dark"] .text-gray-500,
+      html[data-theme="dark"] .text-gray-400 {
+        color: #94a3b8 !important;
+      }
+      html[data-theme="dark"] .border-gray-100,
+      html[data-theme="dark"] .border-gray-200,
+      html[data-theme="dark"] .border-gray-300,
+      html[data-theme="dark"] .border-white {
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] .image-placeholder {
+        background: linear-gradient(135deg, #1e293b 0%, #2d3b4f 100%) !important;
+        color: #94a3b8 !important;
+        border-color: #334155 !important;
+      }
+      html[data-theme="dark"] #navbar.bg-white {
+        background-color: rgba(17, 24, 39, 0.97) !important;
+      }
+      html[data-theme="dark"] #navbar.nav-blur {
+        background-color: rgba(17, 24, 39, 0.85) !important;
+      }
+      html[data-theme="dark"] .shadow-md,
+      html[data-theme="dark"] .shadow-lg,
+      html[data-theme="dark"] .shadow-xl,
+      html[data-theme="dark"] .shadow-2xl {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      }
+      html[data-theme="dark"] input,
+      html[data-theme="dark"] select,
+      html[data-theme="dark"] textarea {
+        background-color: #1a2332 !important;
+        color: #e2e8f0 !important;
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] ::placeholder {
+        color: #64748b !important;
+      }
+
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        color: #2b4c7e;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+      .theme-toggle-btn:hover {
+        border-color: #2b4c7e;
+        transform: scale(1.05);
+      }
+      .theme-toggle-mobile-btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+      }
+      html[data-theme="dark"] .theme-toggle-btn {
+        background: #1e293b;
+        border-color: #334155;
+        color: #ffc000;
+      }
+
+      /* ===== AMASSA Shared Navbar (synced with reinigung.html) ===== */
+      .navbar {
+        --primary: #33539B;
+        --primary-dark: #2F3C8B;
+        --secondary: #4C9ACD;
+        --surface: #FFFFFF;
+        --surface-alt: #EEF3F8;
+        --text-primary: #2F3E4F;
+        --text-muted: #6E7C8C;
+        --border: #D9E2EC;
+        --shadow-sm: 0 2px 8px rgba(47, 60, 139, 0.08);
+        --shadow-md: 0 8px 24px rgba(47, 60, 139, 0.12);
+        --shadow-lg: 0 16px 48px rgba(47, 60, 139, 0.16);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      html[data-theme="dark"] .navbar {
+        --primary: #4C9ACD;
+        --primary-dark: #33539B;
+        --secondary: #8CA9C4;
+        --surface: #2d3748;
+        --surface-alt: #374151;
+        --text-primary: #f7fafc;
+        --text-muted: #cbd5e0;
+        --border: #4a5568;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar .navbar-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-left: -8px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .navbar .logo-img {
+        height: 48px;
+        width: auto;
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        list-style: none;
+      }
+
+      .navbar .nav-menu a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+
+      .navbar .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .navbar .nav-menu > li > a.active,
+      .navbar .nav-dropdown-toggle.active,
+      .navbar .nav-dropdown-menu li a.active {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .navbar .nav-dropdown {
+        position: relative;
+      }
+
+      .navbar .nav-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        white-space: nowrap;
+        transition: color 0.2s;
+        padding: 0;
+      }
+
+      .navbar .nav-dropdown-toggle:hover,
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle {
+        color: var(--primary);
+      }
+
+      .navbar .nav-dropdown-toggle i {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s ease;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle i {
+        transform: rotate(180deg);
+      }
+
+      .navbar .nav-dropdown-menu {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        min-width: 230px;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.2s ease;
+        z-index: 100;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .navbar .nav-dropdown-menu li a {
+        display: block;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .navbar .nav-dropdown-menu li a:hover {
+        background: var(--surface-alt);
+        color: var(--primary);
+      }
+
+
+      .navbar .nav-dropdown-category {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+      }
+      .navbar .nav-dropdown-category a {
+        display: block;
+        padding: 0.3rem 1rem 0.15rem;
+        color: var(--primary);
+        border-radius: 6px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+      .navbar .nav-dropdown-category a:hover {
+        background: var(--surface-alt);
+        color: var(--primary-dark) !important;
+      }
+      .navbar .nav-dropdown-category--border {
+        margin-top: 0.4rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .navbar .nav-dropdown-sub {
+        padding-left: 1.5rem !important;
+      }
+      .navbar .nav-dropdown-weiter {
+        padding-left: 1.5rem !important;
+        font-size: 0.78rem !important;
+        color: var(--primary) !important;
+        font-weight: 600 !important;
+        opacity: 0.75;
+      }
+      .navbar .nav-dropdown-weiter:hover {
+        opacity: 1;
+      }
+
+      .navbar .nav-dropdown-menu .nav-dropdown-overview {
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.85rem;
+      }
+
+      .navbar .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #FFFFFF !important;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+      }
+
+      .navbar .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .navbar .theme-toggle {
+        background: var(--surface-alt);
+        border: 2px solid var(--border);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: var(--text-primary);
+      }
+
+      .navbar .theme-toggle:hover {
+        border-color: var(--primary);
+        transform: scale(1.05);
+      }
+
+      .navbar .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 768px) {
+        .navbar .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .nav-menu.active {
+          display: flex;
+        }
+
+        .navbar .mobile-toggle {
+          display: block;
+        }
+
+        .navbar .nav-dropdown {
+          width: 100%;
+        }
+
+        .navbar .nav-dropdown-toggle {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .navbar .nav-dropdown-menu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          border: none;
+          background: var(--surface-alt);
+          margin: 0.5rem 0 0;
+          width: 100%;
+        }
+      }
+      /* ===== Per-destination hover colors (match hero of linked page) ===== */
+      .navbar .nav-menu a[href="hauswartung.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="hauswartung.html"]:hover { color: #70ad47 !important; }
+
+      .navbar .nav-menu a[href="abos-pakete.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="abos-pakete.html"]:hover { color: #ffc000 !important; }
+
+      .navbar .nav-menu a[href="referenzen.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="referenzen.html"]:hover { color: #ED2939 !important; }
+
+      .navbar .nav-menu a[href="ueber-uns.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="ueber-uns.html"]:hover { color: #5b4b9a !important; }
+  </style>
+
+    <!-- Schema.org Structured Data for Reviews -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.amassa.ch",
+        "name": "AMASSA GmbH",
+        "telephone": "+41782662566",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Romanshornerstrasse 25",
+          "addressLocality": "Wittenbach",
+          "postalCode": "9300",
+          "addressCountry": "CH"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "62"
+        }
+      }
+    </script>
+  
+    <!-- Page-specific active nav color -->
+    <style>
+      .navbar .nav-menu a[href="referenzen.html"].active,
+      .navbar .nav-menu a[href="referenzen.html"] {
+        color: #ED2939 !important;
+      }
+      .navbar .nav-menu a[href="referenzen.html"]:hover {
+        color: #ED2939 !important;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+
+    <!-- ============================================================
+         GOOGLE REVIEWS CONFIG — UPDATE THIS BLOCK WHENEVER YOU
+         CHECK YOUR GOOGLE MAPS LISTING FOR UPDATED STATS.
+         Google Maps URL: https://maps.app.goo.gl/KUJsgkS4n6djVih47
+         ============================================================ -->
+    <script>
+      const GOOGLE_REVIEWS = {
+        totalReviews: 62,          // <-- Update this number
+        averageRating: 5.0,        // <-- Update this number
+        lastUpdated: "2024-12-01", // <-- Update this date (YYYY-MM-DD)
+        googleMapsUrl: "https://maps.app.goo.gl/KUJsgkS4n6djVih47"
+      };
+
+      // Derived display values
+      GOOGLE_REVIEWS.ratingDisplay = GOOGLE_REVIEWS.averageRating.toFixed(1);
+      GOOGLE_REVIEWS.lastUpdatedDisplay = new Date(GOOGLE_REVIEWS.lastUpdated)
+        .toLocaleDateString("de-CH", { day: "numeric", month: "long", year: "numeric" });
+
+      // Inject all values into the DOM after load
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("[data-review-count]").forEach(el => {
+          el.textContent = GOOGLE_REVIEWS.totalReviews;
+        });
+        document.querySelectorAll("[data-review-rating]").forEach(el => {
+          el.textContent = GOOGLE_REVIEWS.ratingDisplay;
+        });
+        document.querySelectorAll("[data-review-label]").forEach(el => {
+          el.textContent = GOOGLE_REVIEWS.totalReviews + " Google-Bewertungen";
+        });
+        document.querySelectorAll("[data-review-url]").forEach(el => {
+          el.href = GOOGLE_REVIEWS.googleMapsUrl;
+        });
+        document.querySelectorAll("[data-review-url-text]").forEach(el => {
+          el.textContent = "Alle " + GOOGLE_REVIEWS.totalReviews + " Bewertungen auf Google ansehen";
+        });
+        document.querySelectorAll("[data-last-updated]").forEach(el => {
+          el.textContent = "Zuletzt aktualisiert: " + GOOGLE_REVIEWS.lastUpdatedDisplay;
+        });
+        // Update page title and meta description dynamically
+        document.title = "Referenzen & Partner | " + GOOGLE_REVIEWS.totalReviews + " Google " + GOOGLE_REVIEWS.ratingDisplay + "-Sterne Bewertungen | AMASSA";
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.content = "AMASSA Referenzen: " + GOOGLE_REVIEWS.totalReviews + " Google Bewertungen mit " + GOOGLE_REVIEWS.ratingDisplay + " Sternen. Wetrok, Kärcher, Kränzle Partner. Zufriedene Kunden in St. Gallen, Zürich & der ganzen Schweiz.";
+        }
+      });
+    </script>
+    <!-- ============================================================ -->
+
+    <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="logo-img" />
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="reinigung.html" class="nav-dropdown-toggle">
+                        Reinigung <i data-lucide="chevron-down"></i>
+                    </a>
+                                                            <ul class="nav-dropdown-menu">
+                        <li><a href="reinigung.html" class="nav-dropdown-overview">Übersicht</a></li>
+                        <li class="nav-dropdown-category"><a href="reinigung.html#unterhaltsreinigung">Unterhaltsreinigung</a></li>
+                        <li><a href="unterhaltsreinigung.html" class="nav-dropdown-sub">Unterhaltsreinigung</a></li>
+                        <li><a href="bueroreinigung.html" class="nav-dropdown-sub">Büroreinigung</a></li>
+                        <li><a href="praxisreinigung.html" class="nav-dropdown-sub">Praxisreinigung</a></li>
+                        <li><a href="reinigung.html#unterhaltsreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                        <li class="nav-dropdown-category nav-dropdown-category--border"><a href="reinigung.html#spezialreinigung">Spezialreinigung</a></li>
+                        <li><a href="baureinigung.html" class="nav-dropdown-sub">Baureinigung</a></li>
+                        <li><a href="endreinigung.html" class="nav-dropdown-sub">Endreinigung / Umzug</a></li>
+                        <li><a href="reinigung.html#spezialreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                    </ul>
+                </li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html">Abos & Pakete</a></li>
+                <li><a href="referenzen.html" class="active">Referenzen</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i data-lucide="sun" class="theme-icon"></i>
+                    </button>
+                </li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte anfragen</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Top Bar -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-heading">Referenzen & Partner</h1>
+            <p>Vertrauen von führenden Unternehmen in St. Gallen und der Ostschweiz</p>
+        </div>
+    </section>
+
+    <!-- Unsere Grosskunden -->
+    <section class="grosskunden-section">
+        <div class="container" style="max-width:1280px;margin:0 auto;padding:3rem 2rem;">
+            <div class="grosskunden-label">Unsere Grosskunden</div>
+            <div class="swiper clientsSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>bestmile</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>DAVAZ</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>GLOBAL BLUE</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>INTELLECTA</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>THUNZ</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>Trnalla</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>visabou</span></div></div>
+                    <div class="swiper-slide"><div class="grosskunden-card"><span>FACELAND</span></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block mb-6">
+            <div class="bg-amassa-accent/20 px-6 py-3 rounded-full">
+              <div class="flex items-center gap-3">
+                <div class="flex gap-1">
+                  <i data-lucide="star" class="w-6 h-6 fill-amassa-accent text-amassa-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-amassa-accent text-amassa-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-amassa-accent text-amassa-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-amassa-accent text-amassa-accent"></i>
+                  <i data-lucide="star" class="w-6 h-6 fill-amassa-accent text-amassa-accent"></i>
+                </div>
+                <div class="text-left">
+                  <div class="font-bold text-amassa-blue text-lg"><span data-review-rating>5.0</span> Sterne</div>
+                  <div class="text-sm text-gray-700"><span data-review-label>62 Google-Bewertungen</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live update notice -->
+          <div class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs px-4 py-2 rounded-full mb-6">
+            <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+            <span data-last-updated>Zuletzt aktualisiert: 1. Dezember 2024</span>
+            &nbsp;·&nbsp;
+            <a data-review-url href="https://maps.app.goo.gl/KUJsgkS4n6djVih47" target="_blank" rel="noopener" class="underline font-semibold hover:text-green-900">Live auf Google ansehen</a>
+          </div>
+          <p class="text-xl text-gray-900 mb-8">Über 200 zufriedene Kunden vertrauen auf unsere Qualität. Lesen Sie, was unsere Kunden über uns sagen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Reviews Stats -->
+    <section class="py-16 bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-5xl font-bold text-amassa-blue mb-2" data-review-count>62</div>
+            <div class="text-gray-600">Google-Bewertungen</div>
+          </div>
+          <div>
+            <div class="text-5xl font-bold text-amassa-accent mb-2" data-review-rating>5.0</div>
+            <div class="text-gray-600">Durchschnittliche Bewertung</div>
+          </div>
+          <div>
+            <div class="text-5xl font-bold text-amassa-green mb-2">200+</div>
+            <div class="text-gray-600">Zufriedene Kunden</div>
+          </div>
+          <div>
+            <div class="text-5xl font-bold text-amassa-teal mb-2">100%</div>
+            <div class="text-gray-600">Weiterempfehlung</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6">Was unsere Kunden sagen</h2>
+          <p class="text-xl text-gray-900 max-w-3xl mx-auto">Authentische Bewertungen von echten Kunden</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Review 1 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Absolut professionelle Baureinigung! Das Team von AMASSA hat unsere Baustelle perfekt gereinigt. Die Abnahme verlief problemlos. Sehr empfehlenswert!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-blue/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-blue">MK</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Michael K.</div>
+                <div class="text-sm text-gray-600">Bauunternehmen, St. Gallen</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Wir sind sehr zufrieden mit der Hauswartung von AMASSA. Zuverlässig, kompetent und immer erreichbar. Unsere Liegenschaft ist in besten Händen!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-green/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-green">SM</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Sandra M.</div>
+                <div class="text-sm text-gray-600">Immobilienverwaltung, Zürich</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Die Büroreinigung von AMASSA ist top! Immer pünktlich, gründlich und freundlich. Unser Büro glänzt jeden Morgen. Danke!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-teal/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-teal">TR</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Thomas R.</div>
+                <div class="text-sm text-gray-600">IT-Unternehmen, Wittenbach</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Die Endreinigung war perfekt! Alles blitzsauber, die Abnahme durch den Vermieter verlief ohne Probleme. Sehr professionell!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-accent/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-accent">JW</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Julia W.</div>
+                <div class="text-sm text-gray-600">Privatkunde, Appenzell</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Unsere Arztpraxis wird seit 2 Jahren von AMASSA gereinigt. Immer zuverlässig, hygienisch einwandfrei und diskret. Sehr zu empfehlen!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-blue/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-blue">DH</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Dr. H.</div>
+                <div class="text-sm text-gray-600">Arztpraxis, St. Gallen</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 6 -->
+          <div class="review-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md">
+            <div class="flex gap-1 mb-4">
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-amassa-accent text-amassa-accent"></i>
+            </div>
+            <p class="text-gray-700 mb-6 italic">"Das HOME PLUS Abo ist perfekt für uns! Einmal pro Woche kommt das Team und sorgt für ein sauberes Zuhause. Beste Entscheidung!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-amassa-accent/10 rounded-full flex items-center justify-center"><span class="font-bold text-amassa-accent">FB</span></div>
+              <div>
+                <div class="font-bold text-gray-800">Familie B.</div>
+                <div class="text-sm text-gray-600">Privatkunde, Thurgau</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a data-review-url href="https://maps.app.goo.gl/KUJsgkS4n6djVih47" target="_blank" rel="noopener"
+            class="inline-block bg-white border-2 border-amassa-blue text-amassa-blue px-8 py-4 rounded-xl font-bold text-lg hover:bg-amassa-blue hover:text-white shadow-lg transition-all">
+            <span class="flex items-center gap-2">
+              <i data-lucide="external-link" class="w-5 h-5"></i>
+              <span data-review-url-text>Alle 62 Bewertungen auf Google ansehen</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Partners -->
+    <section class="py-20 bg-white border-y border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6">Unsere Technikpartner</h2>
+          <p class="text-xl text-gray-900 max-w-3xl mx-auto">Wir arbeiten ausschließlich mit Premium-Marken für beste Reinigungsergebnisse</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          <div class="text-center">
+            <div class="partner-logo mb-6">
+              <div class="w-full h-32 rounded-xl flex items-center justify-center" style="background-color: #003a70;">
+                <span class="font-display font-bold text-3xl md:text-4xl tracking-wide" style="color: #ffffff;">WETROK</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-amassa-blue mb-3">Wetrok</h3>
+            <p class="text-gray-600">Führender Anbieter professioneller Reinigungslösungen. Wir nutzen Wetrok-Systeme für höchste Effizienz und Nachhaltigkeit.</p>
+          </div>
+          <div class="text-center">
+            <div class="partner-logo mb-6">
+              <div class="w-full h-32 rounded-xl flex items-center justify-center" style="background-color: #ffd100;">
+                <span class="font-display font-bold text-3xl md:text-4xl tracking-wide italic" style="color: #1a1a1a;">KÄRCHER</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-amassa-blue mb-3">Kärcher</h3>
+            <p class="text-gray-600">Weltmarktführer in der Reinigungstechnik. Unsere Kärcher-Geräte garantieren perfekte Ergebnisse bei jeder Reinigung.</p>
+          </div>
+          <div class="text-center">
+            <div class="partner-logo mb-6">
+              <div class="w-full h-32 rounded-xl flex items-center justify-center" style="background-color: #f7941d;">
+                <span class="font-display font-bold text-3xl md:text-4xl tracking-wide" style="color: #ffffff;">KRÄNZLE</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-amassa-blue mb-3">Kränzle</h3>
+            <p class="text-gray-600">Premium-Hochdruckreiniger "Made in Germany". Für Fassaden, Terrassen und Außenflächen setzen wir auf Kränzle-Qualität.</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 md:p-12 border-2 border-gray-100">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-amassa-blue/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="award" class="w-8 h-8 text-amassa-blue"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-amassa-blue mb-3">Warum Premium-Partner?</h3>
+              <p class="text-gray-700 mb-4">Qualität beginnt mit dem richtigen Equipment. Durch unsere Partnerschaft mit den führenden Herstellern garantieren wir:</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"></i><span class="text-gray-700">Beste Reinigungsergebnisse</span></div>
+                <div class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"></i><span class="text-gray-700">Umweltschonende Verfahren</span></div>
+                <div class="flex items-start gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"></i><span class="text-gray-700">Maximale Effizienz</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6">Qualität & Sicherheit</h2>
+          <p class="text-xl text-gray-900 max-w-3xl mx-auto">Ihre Sicherheit und Zufriedenheit stehen an erster Stelle</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md text-center">
+            <div class="w-16 h-16 bg-amassa-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-check" class="w-8 h-8 text-amassa-blue"></i></div>
+            <h4 class="font-bold text-gray-800 mb-2">Vollversichert</h4>
+            <p class="text-sm text-gray-600">Haftpflichtversicherung für alle Mitarbeiter und Aufträge</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md text-center">
+            <div class="w-16 h-16 bg-amassa-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="w-8 h-8 text-amassa-green"></i></div>
+            <h4 class="font-bold text-gray-800 mb-2">Geschultes Personal</h4>
+            <p class="text-sm text-gray-600">Professionelle Ausbildung und regelmäßige Weiterbildungen</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md text-center">
+            <div class="w-16 h-16 bg-amassa-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="leaf" class="w-8 h-8 text-amassa-teal"></i></div>
+            <h4 class="font-bold text-gray-800 mb-2">Umweltfreundlich</h4>
+            <p class="text-sm text-gray-600">Ökologische Reinigungsmittel und nachhaltige Verfahren</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md text-center">
+            <div class="w-16 h-16 bg-amassa-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" class="w-8 h-8 text-amassa-accent"></i></div>
+            <h4 class="font-bold text-gray-800 mb-2">Zuverlässig</h4>
+            <p class="text-sm text-gray-600">Pünktlich, termintreu und immer erreichbar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-amassa-blue to-amassa-teal text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Werden Sie unser nächster zufriedener Kunde</h2>
+        <p class="text-xl md:text-2xl mb-10">Überzeugen Sie sich selbst von unserer Qualität</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="kontakt.html" class="bg-amassa-accent text-amassa-blue px-10 py-5 rounded-xl font-bold text-lg hover:bg-amassa-accent-light shadow-2xl transition-all">Kostenlose Offerte anfragen</a>
+          <a href="tel:+41782662566" class="bg-white/10 backdrop-blur border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">+41 78 266 25 66</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #0d1a2e 0%, #1a3050 100%);" class="text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="h-12 w-auto" />
+            </div>
+            <p class="text-white/70 text-sm mb-6">Ihr Partner für professionelle Reinigung und Hauswartung in der ganzen Schweiz.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Reinigung</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="reinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Übersicht</a
+                >
+              </li>
+              <li>
+                <a
+                  href="baureinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Baureinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="bueroreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Büroreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="endreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Endreinigung / Umzug</a
+                >
+              </li>
+              <li>
+                <a
+                  href="praxisreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Praxisreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unterhaltsreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Unterhaltsreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#spezial"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Spezialreinigungen</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Unternehmen</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li><a href="hauswartung.html" class="hover:text-amassa-green transition-colors">Hauswartung</a></li>
+              <li><a href="abos-pakete.html" class="hover:text-amassa-accent transition-colors">Abos & Pakete</a></li>
+              <li><a href="referenzen.html" class="hover:text-amassa-teal transition-colors font-bold text-white">Referenzen & Partner</a></li>
+              <li><a href="ueber-uns.html" class="hover:text-amassa-teal transition-colors">Über uns</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-6">Kontakt</h4>
+            <ul class="space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5 text-amassa-teal"></i><div>Romanshornerstrasse 25<br />9300 Wittenbach</div></li>
+              <li class="flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-amassa-teal"></i><a href="tel:+41782662566" class="hover:text-amassa-teal transition-colors">+41 78 266 25 66</a></li>
+              <li class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-amassa-teal"></i><a href="mailto:info@amassa.ch" class="hover:text-amassa-teal transition-colors">info@amassa.ch</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p class="text-white/60">© 2026 AMASSA GmbH. Alle Rechte vorbehalten.</p>
+            <div class="flex gap-6 text-white/60">
+              <a href="impressum.html" class="hover:text-amassa-teal transition-colors">Impressum</a>
+              <a href="datenschutz.html" class="hover:text-amassa-teal transition-colors">Datenschutz</a>
+              <a href="agb.html" class="hover:text-amassa-teal transition-colors">AGB</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+      }
+
+      // Theme toggle (Hell-/Dunkelmodus)
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = htmlEl.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          htmlEl.setAttribute('data-theme', newTheme);
+          localStorage.setItem('amassa-theme', newTheme);
+          updateThemeIcon(newTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        document.querySelectorAll('.theme-icon').forEach(function (icon) {
+          icon.setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+        });
+        lucide.createIcons();
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Client Logos Slider (Hero)
+      new Swiper('.clientsSwiper', {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 3, spaceBetween: 24 },
+          1024: { slidesPerView: 5, spaceBetween: 30 }
+        }
+      });
+    </script>
+  </body>
+</html>

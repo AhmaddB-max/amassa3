@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Website Generator</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #1a1a24;
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,255,255,0.18);
+    --text: #f0f0f4;
+    --text2: #9898a8;
+    --text3: #6868788;
+    --accent: #7c6fe0;
+    --accent2: #a78bfa;
+    --accent-glow: rgba(124,111,224,0.15);
+    --success: #34d399;
+    --warn: #fbbf24;
+    --danger: #f87171;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top nav */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 600; color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-badge {
+    font-size: 11px; font-weight: 500;
+    background: var(--accent-glow);
+    color: var(--accent2);
+    border: 1px solid rgba(167,139,250,0.25);
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+  .nav-actions { display: flex; gap: 8px; align-items: center; }
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-ghost:hover { border-color: var(--border-hover); color: var(--text); }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 72px 24px 48px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--accent2);
+    background: var(--accent-glow);
+    border: 1px solid rgba(167,139,250,0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .hero-chip::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(167,139,250,0.2);
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #f0f0f4 30%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 16px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Main card */
+  .main-card {
+    max-width: 720px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .card-section {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* URL field */
+  .url-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .url-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--text2);
+    font-size: 15px;
+    pointer-events: none;
+  }
+  .url-field {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+    padding: 12px 16px 12px 40px;
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .url-field::placeholder { color: var(--text2); opacity: 0.6; }
+  .url-field:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .url-field.valid { border-color: rgba(52,211,153,0.5); }
+  .url-field.invalid { border-color: rgba(248,113,113,0.5); }
+  .url-status {
+    position: absolute;
+    right: 12px;
+    font-size: 13px;
+  }
+
+  /* Grid inputs */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text2);
+  }
+  .field-input {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .field-input::placeholder { color: var(--text2); opacity: 0.5; }
+  .field-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  select.field-input { cursor: pointer; }
+  textarea.field-input { resize: vertical; min-height: 80px; line-height: 1.5; }
+
+  /* Style chips */
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .style-chip {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .style-chip:hover { border-color: var(--border-hover); }
+  .style-chip.active {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .style-chip .chip-icon { font-size: 18px; margin-bottom: 4px; display: block; }
+  .style-chip .chip-name { font-size: 11px; color: var(--text2); font-weight: 500; }
+  .style-chip.active .chip-name { color: var(--accent2); }
+
+  /* Color palettes */
+  .palette-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .palette-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 12px;
+    color: var(--text2);
+    user-select: none;
+  }
+  .palette-option:hover { border-color: var(--border-hover); color: var(--text); }
+  .palette-option.active { border-color: var(--accent); color: var(--accent2); background: var(--accent-glow); }
+  .palette-dots { display: flex; gap: 3px; }
+  .palette-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* Sections checklist */
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .section-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .section-toggle:hover { border-color: var(--border-hover); }
+  .section-toggle.active {
+    border-color: rgba(52,211,153,0.4);
+    background: rgba(52,211,153,0.05);
+  }
+  .toggle-check {
+    width: 16px; height: 16px;
+    border: 1.5px solid var(--border-hover);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    font-size: 10px;
+  }
+  .section-toggle.active .toggle-check {
+    background: var(--success);
+    border-color: var(--success);
+    color: #0a0a0f;
+  }
+  .toggle-label { font-size: 12px; color: var(--text2); }
+  .section-toggle.active .toggle-label { color: var(--text); }
+
+  /* Generate button */
+  .generate-section {
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(124,111,224,0.04);
+  }
+  .btn-generate {
+    flex: 1;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    letter-spacing: -0.2px;
+  }
+  .btn-generate:hover {
+    background: #8c7ff0;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(124,111,224,0.3);
+  }
+  .btn-generate:active { transform: translateY(0); }
+  .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-arrow {
+    width: 22px; height: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .generate-note {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.5;
+    max-width: 180px;
+  }
+
+  /* History */
+  .history-section { max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+  .history-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text2);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .history-list { display: flex; flex-direction: column; gap: 8px; }
+  .history-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .history-item:hover { border-color: var(--border-hover); }
+  .history-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    flex-shrink: 0;
+  }
+  .history-info { flex: 1; min-width: 0; }
+  .history-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .history-url { font-size: 11px; color: var(--text2); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .history-time { font-size: 11px; color: var(--text2); flex-shrink: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav { padding: 12px 16px; }
+    h1 { font-size: 32px; }
+    .hero { padding: 48px 16px 32px; }
+    .main-card { padding: 0 16px; }
+    .card-section { padding: 20px 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .style-grid { grid-template-columns: repeat(3, 1fr); }
+    .sections-grid { grid-template-columns: repeat(2, 1fr); }
+    .generate-section { flex-direction: column; }
+    .generate-note { max-width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <svg viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="8" fill="#7c6fe0"/>
+      <path d="M7 14.5L11.5 19L21 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    SiteForge AI
+  </a>
+  <span class="nav-badge">Powered by Claude</span>
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="clearHistory()">Clear History</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-chip">AI Website Builder</div>
+  <h1>From any website<br>to yours — instantly</h1>
+  <p>Paste a reference site. Claude analyzes the layout, business category, and design language, then builds your professional website from scratch.</p>
+</div>
+
+<div class="main-card">
+  <div class="card">
+
+    <!-- Reference URL -->
+    <div class="card-section">
+      <div class="section-label">Reference website</div>
+      <div class="url-wrapper">
+        <span class="url-icon">🔗</span>
+        <input
+          type="url"
+          class="url-field"
+          id="refUrl"
+          placeholder="https://example.com — paste any professional site"
+          oninput="validateUrl(this)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <span class="url-status" id="urlStatus"></span>
+      </div>
+    </div>
+
+    <!-- Business Info -->
+    <div class="card-section">
+      <div class="section-label">Your business</div>
+      <div class="grid-2" style="margin-bottom:14px;">
+        <div class="field-group">
+          <label class="field-label">Business name</label>
+          <input type="text" class="field-input" id="bizName" placeholder="Acme Corp" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Industry / category</label>
+          <select class="field-input" id="bizCategory">
+            <option value="auto">Auto-detect from reference</option>
+            <option value="saas">SaaS / Software</option>
+            <option value="agency">Creative Agency</option>
+            <option value="ecommerce">E-commerce / Retail</option>
+            <option value="restaurant">Restaurant / Food</option>
+            <option value="healthcare">Healthcare / Medical</option>
+            <option value="finance">Finance / Fintech</option>
+            <option value="realestate">Real Estate</option>
+            <option value="law">Law / Legal</option>
+            <option value="education">Education / Courses</option>
+            <option value="fitness">Fitness / Wellness</option>
+            <option value="consulting">Consulting / Services</option>
+            <option value="portfolio">Portfolio / Personal</option>
+            <option value="nonprofit">Nonprofit / Charity</option>
+            <option value="hospitality">Hotel / Hospitality</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Tagline / headline</label>
+        <input type="text" class="field-input" id="tagline" placeholder="The fastest way to ship great products" />
+      </div>
+      <div class="field-group">
+        <label class="field-label">Brief description (optional — helps generate richer content)</label>
+        <textarea class="field-input" id="description" placeholder="We help startups build and launch web applications in record time. Founded in 2020, we've shipped over 200 products..."></textarea>
+      </div>
+    </div>
+
+    <!-- Style -->
+    <div class="card-section">
+      <div class="section-label">Design style</div>
+      <div class="style-grid" id="styleGrid">
+        <div class="style-chip active" data-style="modern" onclick="selectStyle(this)">
+          <span class="chip-icon">⚡</span>
+          <span class="chip-name">Modern</span>
+        </div>
+        <div class="style-chip" data-style="minimal" onclick="selectStyle(this)">
+          <span class="chip-icon">◻</span>
+          <span class="chip-name">Minimal</span>
+        </div>
+        <div class="style-chip" data-style="bold" onclick="selectStyle(this)">
+          <span class="chip-icon">🔥</span>
+          <span class="chip-name">Bold</span>
+        </div>
+        <div class="style-chip" data-style="luxury" onclick="selectStyle(this)">
+          <span class="chip-icon">✦</span>
+          <span class="chip-name">Luxury</span>
+        </div>
+        <div class="style-chip" data-style="friendly" onclick="selectStyle(this)">
+          <span class="chip-icon">🌿</span>
+          <span class="chip-name">Friendly</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="card-section">
+      <div class="section-label">Color palette</div>
+      <div class="palette-grid" id="paletteGrid">
+        <div class="palette-option active" data-palette="auto" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#7c6fe0"></div>
+            <div class="palette-dot" style="background:#a78bfa"></div>
+            <div class="palette-dot" style="background:#ddd6fe"></div>
+          </div>
+          Auto-match reference
+        </div>
+        <div class="palette-option" data-palette="blue" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#1e40af"></div>
+            <div class="palette-dot" style="background:#3b82f6"></div>
+            <div class="palette-dot" style="background:#bfdbfe"></div>
+          </div>
+          Ocean Blue
+        </div>
+        <div class="palette-option" data-palette="forest" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#14532d"></div>
+            <div class="palette-dot" style="background:#22c55e"></div>
+            <div class="palette-dot" style="background:#dcfce7"></div>
+          </div>
+          Forest Green
+        </div>
+        <div class="palette-option" data-palette="sunset" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#7c2d12"></div>
+            <div class="palette-dot" style="background:#f97316"></div>
+            <div class="palette-dot" style="background:#fed7aa"></div>
+          </div>
+          Sunset Orange
+        </div>
+        <div class="palette-option" data-palette="midnight" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#0f172a"></div>
+            <div class="palette-dot" style="background:#475569"></div>
+            <div class="palette-dot" style="background:#e2e8f0"></div>
+          </div>
+          Midnight
+        </div>
+        <div class="palette-option" data-palette="rose" onclick="selectPalette(this)">
+          <div class="palette-dots">
+            <div class="palette-dot" style="background:#881337"></div>
+            <div class="palette-dot" style="background:#f43f5e"></div>
+            <div class="palette-dot" style="background:#ffe4e6"></div>
+          </div>
+          Rose Red
+        </div>
+      </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="card-section">
+      <div class="section-label">Sections to include</div>
+      <div class="sections-grid" id="sectionsGrid">
+        <div class="section-toggle active" data-section="hero" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Hero</span>
+        </div>
+        <div class="section-toggle active" data-section="features" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Features</span>
+        </div>
+        <div class="section-toggle active" data-section="about" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">About</span>
+        </div>
+        <div class="section-toggle active" data-section="services" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Services</span>
+        </div>
+        <div class="section-toggle active" data-section="testimonials" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Testimonials</span>
+        </div>
+        <div class="section-toggle active" data-section="pricing" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Pricing</span>
+        </div>
+        <div class="section-toggle active" data-section="faq" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">FAQ</span>
+        </div>
+        <div class="section-toggle active" data-section="contact" onclick="toggleSection(this)">
+          <div class="toggle-check">✓</div>
+          <span class="toggle-label">Contact</span>
+        </div>
+        <div class="section-toggle" data-section="team" onclick="toggleSection(this)">
+          <div class="toggle-check"></div>
+          <span class="toggle-label">Team</span>
+        </div>
+        <div class="section-toggle" data-section="gallery" onclick="toggleSection(this)">
+          <div class="toggle-check"></div>
+          <span class="toggle-label">Gallery</span>
+        </div>
+        <div class="section-toggle" data-section="blog" onclick="toggleSection(this)">
+          <div class="toggle-check"></div>
+          <span class="toggle-label">Blog</span>
+        </div>
+        <div class="section-toggle" data-section="newsletter" onclick="toggleSection(this)">
+          <div class="toggle-check"></div>
+          <span class="toggle-label">Newsletter</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra instructions -->
+    <div class="card-section">
+      <div class="section-label">Additional instructions</div>
+      <div class="field-group">
+        <textarea class="field-input" id="extraInstructions" style="min-height:64px;" placeholder="Any specific requests — e.g. 'dark theme', 'include a video background', 'make it bilingual English/French', 'add a sticky booking widget'..."></textarea>
+      </div>
+    </div>
+
+    <!-- Generate -->
+    <div class="generate-section">
+      <button class="btn-generate" id="generateBtn" onclick="generate()">
+        Generate my website
+        <span class="btn-arrow">↗</span>
+      </button>
+      <p class="generate-note">Claude will fetch the reference, analyze it, and build a complete HTML site in your workspace folder.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- History -->
+<div class="history-section" id="historySection" style="display:none;">
+  <div class="history-title">
+    <span>⏱</span> Recent generations
+  </div>
+  <div class="history-list" id="historyList"></div>
+</div>
+
+<script>
+let selectedStyle = 'modern';
+let selectedPalette = 'auto';
+
+function validateUrl(input) {
+  const val = input.value.trim();
+  if (!val) { input.className = 'url-field'; document.getElementById('urlStatus').textContent = ''; return; }
+  try {
+    const url = new URL(val.startsWith('http') ? val : 'https://' + val);
+    input.className = 'url-field valid';
+    document.getElementById('urlStatus').textContent = '✓';
+    document.getElementById('urlStatus').style.color = '#34d399';
+  } catch {
+    input.className = 'url-field invalid';
+    document.getElementById('urlStatus').textContent = '✗';
+    document.getElementById('urlStatus').style.color = '#f87171';
+  }
+}
+
+function selectStyle(el) {
+  document.querySelectorAll('.style-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedStyle = el.dataset.style;
+}
+
+function selectPalette(el) {
+  document.querySelectorAll('.palette-option').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedPalette = el.dataset.palette;
+}
+
+function toggleSection(el) {
+  el.classList.toggle('active');
+  const check = el.querySelector('.toggle-check');
+  check.textContent = el.classList.contains('active') ? '✓' : '';
+}
+
+function getActiveSections() {
+  return Array.from(document.querySelectorAll('.section-toggle.active')).map(el => el.dataset.section);
+}
+
+function generate() {
+  const url = document.getElementById('refUrl').value.trim();
+  const bizName = document.getElementById('bizName').value.trim();
+  const category = document.getElementById('bizCategory').value;
+  const tagline = document.getElementById('tagline').value.trim();
+  const description = document.getElementById('description').value.trim();
+  const extra = document.getElementById('extraInstructions').value.trim();
+  const sections = getActiveSections();
+
+  if (!url) {
+    document.getElementById('refUrl').focus();
+    document.getElementById('refUrl').style.borderColor = '#f87171';
+    setTimeout(() => { document.getElementById('refUrl').style.borderColor = ''; }, 2000);
+    return;
+  }
+
+  const normalizedUrl = url.startsWith('http') ? url : 'https://' + url;
+
+  const paletteMap = {
+    auto: 'match the reference site palette exactly',
+    blue: 'Ocean Blue (deep navy + bright blue accents)',
+    forest: 'Forest Green (dark green + fresh emerald accents)',
+    sunset: 'Sunset Orange (warm amber + orange accents)',
+    midnight: 'Midnight Slate (near-black + cool gray tones)',
+    rose: 'Rose Red (deep burgundy + rose/pink accents)'
+  };
+
+  const categoryLabel = document.getElementById('bizCategory').selectedOptions[0].text;
+
+  const prompt = `Generate a professional website based on the following specifications. Please:
+1. Fetch and analyze the reference website: ${normalizedUrl}
+2. Identify: business category, color scheme, layout patterns, typography style, tone, and section structure
+3. Generate a complete, production-ready single-file HTML website
+4. Save it to the workspace folder as "${bizName ? bizName.replace(/\s+/g, '_') : 'generated'}_website.html"
+
+SPECIFICATIONS:
+- Business name: ${bizName || '(auto-suggest from reference)'}
+- Category: ${category === 'auto' ? 'Auto-detect from reference site' : categoryLabel}
+- Tagline: ${tagline || '(auto-generate based on category)'}
+- Description: ${description || '(generate compelling content based on category)'}
+- Design style: ${selectedStyle.charAt(0).toUpperCase() + selectedStyle.slice(1)}
+- Color palette: ${paletteMap[selectedPalette]}
+- Sections to include: ${sections.join(', ')}
+${extra ? `- Additional requirements: ${extra}` : ''}
+
+OUTPUT REQUIREMENTS:
+The generated HTML file must be:
+- A complete, single self-contained HTML file (all CSS and JS inline)
+- Fully responsive (mobile, tablet, desktop)
+- Professional and polished — pixel-perfect layout
+- Include smooth scroll, hover effects, and subtle animations
+- Have a sticky navigation header
+- Use modern CSS (flexbox, grid, custom properties)
+- Include Font Awesome or Google Fonts where appropriate
+- Have real placeholder content fitting the business category (not lorem ipsum)
+- Include a working contact form section
+- Be immediately ready to open in a browser
+
+After saving, please show me a preview summary of what was generated and present the file.`;
+
+  if (typeof sendPrompt === 'function') {
+    sendPrompt(prompt);
+    saveToHistory(normalizedUrl, bizName, categoryLabel);
+  } else {
+    alert('Please open this app inside Cowork / Claude to use the generation feature. The prompt has been prepared — paste it into your Claude chat.');
+    console.log('PROMPT:\n', prompt);
+  }
+}
+
+function saveToHistory(url, name, category) {
+  const history = JSON.parse(localStorage.getItem('siteforge_history') || '[]');
+  history.unshift({ url, name: name || 'Unnamed', category, time: new Date().toLocaleString() });
+  if (history.length > 10) history.pop();
+  localStorage.setItem('siteforge_history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('siteforge_history') || '[]');
+  const section = document.getElementById('historySection');
+  const list = document.getElementById('historyList');
+  if (history.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = history.map(item => `
+    <div class="history-item" onclick="loadFromHistory('${item.url}', '${item.name}')">
+      <div class="history-dot"></div>
+      <div class="history-info">
+        <div class="history-name">${item.name}</div>
+        <div class="history-url">${item.url} · ${item.category}</div>
+      </div>
+      <div class="history-time">${item.time}</div>
+    </div>
+  `).join('');
+}
+
+function loadFromHistory(url, name) {
+  document.getElementById('refUrl').value = url;
+  document.getElementById('bizName').value = name !== 'Unnamed' ? name : '';
+  validateUrl(document.getElementById('refUrl'));
+}
+
+function clearHistory() {
+  localStorage.removeItem('siteforge_history');
+  renderHistory();
+}
+
+renderHistory();
+</script>
+</body>
+</html>

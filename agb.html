@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("amassa-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AGB - Allgemeine Geschäftsbedingungen | AMASSA GmbH</title>
+    <meta
+      name="description"
+      content="Allgemeine Geschäftsbedingungen (AGB) der AMASSA GmbH für Reinigung und Hauswartung in der Schweiz"
+    />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.amassa.ch/agb.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.amassa.ch/agb.html" />
+    <meta
+      property="og:title"
+      content="AGB - Allgemeine Geschäftsbedingungen | AMASSA GmbH"
+    />
+    <meta
+      property="og:description"
+      content="Allgemeine Geschäftsbedingungen (AGB) der AMASSA GmbH für Reinigung und Hauswartung in der Schweiz"
+    />
+    <meta
+      property="og:image"
+      content="https://www.amassa.ch/images/og-image.jpg"
+    />
+    <meta property="og:locale" content="de_CH" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-teal": "#5B9BD5",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      .nav-blur {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      /* Hero Top Bar */
+      :root {
+        --primary: #2b4c7e;
+        --secondary: #5b9bd5;
+        --accent: #ffc000;
+        --text-primary: #1f2937;
+      }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        padding: 8rem 2rem 4rem;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .hero .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .hero h1,
+      .hero .hero-heading {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      /* ============ Dark / Light Mode ============ */
+      html[data-theme="dark"] {
+        color-scheme: dark;
+      }
+      html[data-theme="dark"] body {
+        background-color: #0f172a;
+      }
+      html[data-theme="dark"] .bg-white {
+        background-color: #1a2332 !important;
+      }
+      html[data-theme="dark"] .bg-gray-50 {
+        background-color: #141b2b !important;
+      }
+      html[data-theme="dark"] .bg-gray-100 {
+        background-color: #1e293b !important;
+      }
+      html[data-theme="dark"] .bg-blue-50 {
+        background-color: rgba(91, 155, 213, 0.12) !important;
+      }
+      html[data-theme="dark"] .bg-blue-100 {
+        background-color: rgba(91, 155, 213, 0.2) !important;
+      }
+      html[data-theme="dark"] .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+      html[data-theme="dark"] .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+      html[data-theme="dark"] .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+      html[data-theme="dark"] .text-gray-600,
+      html[data-theme="dark"] .text-gray-500,
+      html[data-theme="dark"] .text-gray-400 {
+        color: #94a3b8 !important;
+      }
+      html[data-theme="dark"] .border-gray-100,
+      html[data-theme="dark"] .border-gray-200,
+      html[data-theme="dark"] .border-gray-300,
+      html[data-theme="dark"] .border-white {
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] .image-placeholder {
+        background: linear-gradient(
+          135deg,
+          #1e293b 0%,
+          #2d3b4f 100%
+        ) !important;
+        color: #94a3b8 !important;
+        border-color: #334155 !important;
+      }
+      html[data-theme="dark"] #navbar.bg-white {
+        background-color: rgba(17, 24, 39, 0.97) !important;
+      }
+      html[data-theme="dark"] #navbar.nav-blur {
+        background-color: rgba(17, 24, 39, 0.85) !important;
+      }
+      html[data-theme="dark"] .shadow-md,
+      html[data-theme="dark"] .shadow-lg,
+      html[data-theme="dark"] .shadow-xl,
+      html[data-theme="dark"] .shadow-2xl {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      }
+      html[data-theme="dark"] input,
+      html[data-theme="dark"] select,
+      html[data-theme="dark"] textarea {
+        background-color: #1a2332 !important;
+        color: #e2e8f0 !important;
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] ::placeholder {
+        color: #64748b !important;
+      }
+
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        color: #2b4c7e;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+      .theme-toggle-btn:hover {
+        border-color: #2b4c7e;
+        transform: scale(1.05);
+      }
+      .theme-toggle-mobile-btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+      }
+      html[data-theme="dark"] .theme-toggle-btn {
+        background: #1e293b;
+        border-color: #334155;
+        color: #ffc000;
+      }
+
+      /* ===== AMASSA Shared Navbar (synced with reinigung.html) ===== */
+      .navbar {
+        --primary: #33539B;
+        --primary-dark: #2F3C8B;
+        --secondary: #4C9ACD;
+        --surface: #FFFFFF;
+        --surface-alt: #EEF3F8;
+        --text-primary: #2F3E4F;
+        --text-muted: #6E7C8C;
+        --border: #D9E2EC;
+        --shadow-sm: 0 2px 8px rgba(47, 60, 139, 0.08);
+        --shadow-md: 0 8px 24px rgba(47, 60, 139, 0.12);
+        --shadow-lg: 0 16px 48px rgba(47, 60, 139, 0.16);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      html[data-theme="dark"] .navbar {
+        --primary: #4C9ACD;
+        --primary-dark: #33539B;
+        --secondary: #8CA9C4;
+        --surface: #2d3748;
+        --surface-alt: #374151;
+        --text-primary: #f7fafc;
+        --text-muted: #cbd5e0;
+        --border: #4a5568;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar .navbar-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-left: -8px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .navbar .logo-img {
+        height: 48px;
+        width: auto;
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        list-style: none;
+      }
+
+      .navbar .nav-menu a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+
+      .navbar .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .navbar .nav-menu > li > a.active,
+      .navbar .nav-dropdown-toggle.active,
+      .navbar .nav-dropdown-menu li a.active {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .navbar .nav-dropdown {
+        position: relative;
+      }
+
+      .navbar .nav-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        white-space: nowrap;
+        transition: color 0.2s;
+        padding: 0;
+      }
+
+      .navbar .nav-dropdown-toggle:hover,
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle {
+        color: var(--primary);
+      }
+
+      .navbar .nav-dropdown-toggle i {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s ease;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle i {
+        transform: rotate(180deg);
+      }
+
+      .navbar .nav-dropdown-menu {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        min-width: 230px;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.2s ease;
+        z-index: 100;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .navbar .nav-dropdown-menu li a {
+        display: block;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .navbar .nav-dropdown-menu li a:hover {
+        background: var(--surface-alt);
+        color: var(--primary);
+      }
+
+
+      .navbar .nav-dropdown-category {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+      }
+      .navbar .nav-dropdown-category a {
+        display: block;
+        padding: 0.3rem 1rem 0.15rem;
+        color: var(--primary);
+        border-radius: 6px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+      .navbar .nav-dropdown-category a:hover {
+        background: var(--surface-alt);
+        color: var(--primary-dark) !important;
+      }
+      .navbar .nav-dropdown-category--border {
+        margin-top: 0.4rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .navbar .nav-dropdown-sub {
+        padding-left: 1.5rem !important;
+      }
+      .navbar .nav-dropdown-weiter {
+        padding-left: 1.5rem !important;
+        font-size: 0.78rem !important;
+        color: var(--primary) !important;
+        font-weight: 600 !important;
+        opacity: 0.75;
+      }
+      .navbar .nav-dropdown-weiter:hover {
+        opacity: 1;
+      }
+
+      .navbar .nav-dropdown-menu .nav-dropdown-overview {
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.85rem;
+      }
+
+      .navbar .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #FFFFFF !important;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+      }
+
+      .navbar .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .navbar .theme-toggle {
+        background: var(--surface-alt);
+        border: 2px solid var(--border);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: var(--text-primary);
+      }
+
+      .navbar .theme-toggle:hover {
+        border-color: var(--primary);
+        transform: scale(1.05);
+      }
+
+      .navbar .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 768px) {
+        .navbar .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .nav-menu.active {
+          display: flex;
+        }
+
+        .navbar .mobile-toggle {
+          display: block;
+        }
+
+        .navbar .nav-dropdown {
+          width: 100%;
+        }
+
+        .navbar .nav-dropdown-toggle {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .navbar .nav-dropdown-menu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          border: none;
+          background: var(--surface-alt);
+          margin: 0.5rem 0 0;
+          width: 100%;
+        }
+      }
+      /* ===== Per-destination hover colors (match hero of linked page) ===== */
+      .navbar .nav-menu a[href="hauswartung.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="hauswartung.html"]:hover { color: #70ad47 !important; }
+
+      .navbar .nav-menu a[href="abos-pakete.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="abos-pakete.html"]:hover { color: #ffc000 !important; }
+
+      .navbar .nav-menu a[href="referenzen.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="referenzen.html"]:hover { color: #ED2939 !important; }
+
+      .navbar .nav-menu a[href="ueber-uns.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="ueber-uns.html"]:hover { color: #5b4b9a !important; }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="logo-img" />
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="reinigung.html" class="nav-dropdown-toggle">
+                        Reinigung <i data-lucide="chevron-down"></i>
+                    </a>
+                                                            <ul class="nav-dropdown-menu">
+                        <li><a href="reinigung.html" class="nav-dropdown-overview">Übersicht</a></li>
+                        <li class="nav-dropdown-category"><a href="reinigung.html#unterhaltsreinigung">Unterhaltsreinigung</a></li>
+                        <li><a href="unterhaltsreinigung.html" class="nav-dropdown-sub">Unterhaltsreinigung</a></li>
+                        <li><a href="bueroreinigung.html" class="nav-dropdown-sub">Büroreinigung</a></li>
+                        <li><a href="praxisreinigung.html" class="nav-dropdown-sub">Praxisreinigung</a></li>
+                        <li><a href="reinigung.html#unterhaltsreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                        <li class="nav-dropdown-category nav-dropdown-category--border"><a href="reinigung.html#spezialreinigung">Spezialreinigung</a></li>
+                        <li><a href="baureinigung.html" class="nav-dropdown-sub">Baureinigung</a></li>
+                        <li><a href="endreinigung.html" class="nav-dropdown-sub">Endreinigung / Umzug</a></li>
+                        <li><a href="reinigung.html#spezialreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                    </ul>
+                </li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html">Abos & Pakete</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i data-lucide="sun" class="theme-icon"></i>
+                    </button>
+                </li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte anfragen</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Top Bar -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-heading">Allgemeine Geschäftsbedingungen</h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="pt-32 pb-20 bg-gray-50 min-h-screen">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-amassa-blue mb-8">
+            Allgemeine Geschäftsbedingungen (AGB)
+          </h2>
+
+          <div class="prose prose-lg max-w-none">
+            <!-- Einleitung -->
+            <section class="mb-10">
+              <p class="mb-4">
+                Die folgenden Allgemeinen Geschäftsbedingungen (AGB) gelten für
+                alle Verträge zwischen der AMASSA GmbH (nachfolgend "AMASSA"
+                oder "Auftragnehmer") und ihren Kunden (nachfolgend
+                "Auftraggeber" oder "Kunde") über Reinigungs- und
+                Hauswartungsdienstleistungen.
+              </p>
+              <div class="bg-gray-50 rounded-xl p-6 my-6">
+                <p class="mb-2"><strong>AMASSA GmbH</strong></p>
+                <p class="mb-2">Romanshornerstrasse 25</p>
+                <p class="mb-2">9300 Wittenbach</p>
+                <p class="mb-2">Schweiz</p>
+                <p class="mb-2 mt-4">
+                  <strong>Telefon:</strong> +41 78 266 25 66
+                </p>
+                <p class="mb-2"><strong>E-Mail:</strong> info@amassa.ch</p>
+              </div>
+            </section>
+
+            <!-- 1. Geltungsbereich -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                1. Geltungsbereich
+              </h2>
+              <p class="mb-4">
+                1.1 Diese AGB gelten für alle Geschäftsbeziehungen zwischen
+                AMASSA und dem Auftraggeber. Abweichende, entgegenstehende oder
+                ergänzende AGB des Auftraggebers werden nur dann und insoweit
+                Vertragsbestandteil, als AMASSA ihrer Geltung ausdrücklich
+                schriftlich zugestimmt hat.
+              </p>
+              <p class="mb-4">
+                1.2 Diese AGB gelten auch für alle zukünftigen Geschäfte mit dem
+                Auftraggeber, soweit es sich um Rechtsgeschäfte verwandter Art
+                handelt.
+              </p>
+              <p class="mb-4">
+                1.3 Individuelle Vereinbarungen mit dem Auftraggeber
+                (einschliesslich Nebenabreden, Ergänzungen und Änderungen) haben
+                in jedem Fall Vorrang vor diesen AGB.
+              </p>
+            </section>
+
+            <!-- 2. Vertragsschluss -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                2. Vertragsschluss und Leistungsumfang
+              </h2>
+              <p class="mb-4">
+                2.1 Angebote von AMASSA sind freibleibend und unverbindlich,
+                sofern nicht ausdrücklich als verbindlich gekennzeichnet.
+              </p>
+              <p class="mb-4">
+                2.2 Der Vertrag kommt durch die schriftliche Auftragsbestätigung
+                von AMASSA oder durch die tatsächliche Leistungserbringung
+                zustande.
+              </p>
+              <p class="mb-4">
+                2.3 Der Leistungsumfang richtet sich nach der schriftlichen
+                Offerte bzw. Auftragsbestätigung. Zusätzliche Leistungen werden
+                gesondert berechnet.
+              </p>
+              <p class="mb-4">
+                2.4 AMASSA behält sich das Recht vor, Aufträge ohne Angabe von
+                Gründen abzulehnen.
+              </p>
+            </section>
+
+            <!-- 3. Leistungen -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                3. Leistungserbringung
+              </h2>
+              <p class="mb-4">
+                3.1 AMASSA erbringt ihre Leistungen sorgfältig und fachgerecht
+                nach dem aktuellen Stand der Technik.
+              </p>
+              <p class="mb-4">
+                3.2 Die vereinbarten Leistungen werden zu den vereinbarten
+                Zeiten erbracht. Bei unvorhergesehenen Ereignissen (z.B.
+                Krankheit, Unfall) behält sich AMASSA das Recht vor, die Termine
+                in angemessener Weise zu verschieben.
+              </p>
+              <p class="mb-4">
+                3.3 Der Auftraggeber stellt sicher, dass die zu reinigenden
+                Räumlichkeiten zum vereinbarten Zeitpunkt zugänglich sind.
+                Erforderliche Betriebsmittel (Strom, Wasser) werden vom
+                Auftraggeber kostenlos zur Verfügung gestellt.
+              </p>
+              <p class="mb-4">
+                3.4 AMASSA verwendet grundsätzlich eigene Reinigungsmittel und
+                -geräte. Abweichende Vereinbarungen sind schriftlich
+                festzuhalten.
+              </p>
+            </section>
+
+            <!-- 4. Preise und Zahlung -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                4. Preise und Zahlungsbedingungen
+              </h2>
+              <p class="mb-4">
+                4.1 Es gelten die in der Offerte bzw. Auftragsbestätigung
+                genannten Preise. Alle Preise verstehen sich in Schweizer
+                Franken (CHF) inklusive gesetzlicher Mehrwertsteuer.
+              </p>
+              <p class="mb-4">4.2 Die Rechnungsstellung erfolgt:</p>
+              <ul class="list-disc pl-6 mb-4 space-y-2">
+                <li>Bei einmaligen Aufträgen: nach Leistungserbringung</li>
+                <li>
+                  Bei regelmässigen Leistungen (Abos): monatlich im Voraus oder
+                  nach Vereinbarung
+                </li>
+                <li>
+                  Bei Hauswartungsverträgen: gemäss individueller Vereinbarung
+                </li>
+              </ul>
+              <p class="mb-4">
+                4.3 Rechnungen sind innerhalb von 30 Tagen nach Rechnungsdatum
+                ohne Abzug zu bezahlen, sofern nichts anderes vereinbart wurde.
+              </p>
+              <p class="mb-4">
+                4.4 Bei Zahlungsverzug ist AMASSA berechtigt, Verzugszinsen in
+                Höhe von 5% p.a. zu berechnen. Die Geltendmachung eines
+                weitergehenden Verzugsschadens bleibt vorbehalten.
+              </p>
+              <p class="mb-4">
+                4.5 Bei Zahlungsverzug von mehr als 30 Tagen ist AMASSA
+                berechtigt, weitere Leistungen bis zur vollständigen Bezahlung
+                aller offenen Rechnungen zu verweigern.
+              </p>
+            </section>
+
+            <!-- 5. Pflichten des Auftraggebers -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                5. Pflichten des Auftraggebers
+              </h2>
+              <p class="mb-4">5.1 Der Auftraggeber ist verpflichtet:</p>
+              <ul class="list-disc pl-6 mb-4 space-y-2">
+                <li>
+                  Die Räumlichkeiten zum vereinbarten Zeitpunkt zugänglich zu
+                  machen
+                </li>
+                <li>
+                  Wertgegenstände und zerbrechliche Gegenstände zu sichern
+                </li>
+                <li>
+                  Besondere Gefahrenquellen (z.B. schadhafte Böden, lose Kabel)
+                  zu melden
+                </li>
+                <li>
+                  Bei Bedarf einen Schlüssel oder Zutrittscode bereitzustellen
+                </li>
+                <li>
+                  Ausreichend Strom- und Wasseranschlüsse zur Verfügung zu
+                  stellen
+                </li>
+              </ul>
+              <p class="mb-4">
+                5.2 Mängel sind AMASSA unverzüglich nach Feststellung
+                schriftlich mitzuteilen.
+              </p>
+            </section>
+
+            <!-- 6. Haftung -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                6. Haftung und Gewährleistung
+              </h2>
+              <p class="mb-4">
+                6.1 AMASSA haftet für Schäden nur bei nachgewiesenem Verschulden
+                ihrer Mitarbeiter während der Leistungserbringung.
+              </p>
+              <p class="mb-4">
+                6.2 Die Haftung ist auf die Deckungssumme der
+                Betriebshaftpflichtversicherung begrenzt. Eine weitergehende
+                Haftung wird ausgeschlossen, soweit gesetzlich zulässig.
+              </p>
+              <p class="mb-4">6.3 Nicht gehaftet wird für:</p>
+              <ul class="list-disc pl-6 mb-4 space-y-2">
+                <li>
+                  Bereits vorhandene Schäden, die vor Leistungsbeginn nicht
+                  gemeldet wurden
+                </li>
+                <li>Schäden an unsachgemäss aufbewahrten Wertgegenständen</li>
+                <li>Schäden durch höhere Gewalt</li>
+                <li>Normale Abnutzung und Alterung von Materialien</li>
+              </ul>
+              <p class="mb-4">
+                6.4 Schadenmeldungen sind AMASSA unverzüglich, spätestens
+                innerhalb von 24 Stunden nach Feststellung, schriftlich
+                anzuzeigen. Später gemeldete Schäden werden nicht anerkannt.
+              </p>
+              <p class="mb-4">
+                6.5 Bei mangelhafter Leistung hat der Auftraggeber zunächst
+                Anspruch auf Nachbesserung. Erst wenn die Nachbesserung
+                fehlschlägt, kann eine Minderung des Preises oder Rücktritt vom
+                Vertrag verlangt werden.
+              </p>
+            </section>
+
+            <!-- 7. Vertragsdauer und Kündigung -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                7. Vertragsdauer und Kündigung
+              </h2>
+
+              <h3 class="text-lg font-bold text-gray-800 mb-3 mt-6">
+                7.1 Einmalige Aufträge
+              </h3>
+              <p class="mb-4">
+                Der Vertrag endet mit vollständiger Erbringung der vereinbarten
+                Leistung.
+              </p>
+
+              <h3 class="text-lg font-bold text-gray-800 mb-3 mt-6">
+                7.2 Reinigungsabos (HOME PREMIUM, HOME PLUS, HOME BASIC)
+              </h3>
+              <p class="mb-4">
+                Die Abos werden auf unbestimmte Zeit abgeschlossen und können
+                von beiden Parteien mit einer Frist von einem Monat auf
+                Monatsende gekündigt werden. Die Kündigung hat schriftlich (per
+                E-Mail oder Brief) zu erfolgen.
+              </p>
+
+              <h3 class="text-lg font-bold text-gray-800 mb-3 mt-6">
+                7.3 Hauswartungsverträge
+              </h3>
+              <p class="mb-4">
+                Hauswartungsverträge werden in der Regel auf mindestens 12
+                Monate abgeschlossen. Die Kündigungsfrist beträgt 3 Monate auf
+                Vertragsende. Ohne Kündigung verlängert sich der Vertrag
+                automatisch um weitere 12 Monate.
+              </p>
+
+              <h3 class="text-lg font-bold text-gray-800 mb-3 mt-6">
+                7.4 Ausserordentliche Kündigung
+              </h3>
+              <p class="mb-4">
+                Das Recht zur ausserordentlichen Kündigung aus wichtigem Grund
+                bleibt für beide Parteien unberührt. Ein wichtiger Grund liegt
+                insbesondere vor bei:
+              </p>
+              <ul class="list-disc pl-6 mb-4 space-y-2">
+                <li>Wiederholtem Zahlungsverzug des Auftraggebers</li>
+                <li>Schwerwiegenden Vertragsverletzungen</li>
+                <li>Unzumutbaren Arbeitsbedingungen</li>
+              </ul>
+            </section>
+
+            <!-- 8. Verschwiegenheit -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                8. Verschwiegenheit und Datenschutz
+              </h2>
+              <p class="mb-4">
+                8.1 AMASSA verpflichtet sich, über alle Angelegenheiten und
+                Informationen, die ihr im Rahmen der Vertragserfüllung bekannt
+                werden, Stillschweigen zu bewahren.
+              </p>
+              <p class="mb-4">
+                8.2 Diese Verschwiegenheitspflicht gilt auch nach Beendigung des
+                Vertragsverhältnisses.
+              </p>
+              <p class="mb-4">
+                8.3 Alle Mitarbeiter von AMASSA sind zur Verschwiegenheit
+                verpflichtet.
+              </p>
+              <p class="mb-4">
+                8.4 Für die Verarbeitung personenbezogener Daten gelten die
+                Bestimmungen unserer
+                <a
+                  href="datenschutz.html"
+                  class="text-amassa-blue hover:underline font-semibold"
+                  >Datenschutzerklärung</a
+                >.
+              </p>
+            </section>
+
+            <!-- 9. Schlüsselübergabe -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                9. Schlüssel und Zugangscodes
+              </h2>
+              <p class="mb-4">
+                9.1 Überlässt der Auftraggeber AMASSA Schlüssel oder
+                Zugangscodes, werden diese sicher verwahrt und ausschliesslich
+                für die Leistungserbringung verwendet.
+              </p>
+              <p class="mb-4">
+                9.2 Bei Vertragsende sind Schlüssel und Zugangscodes
+                unverzüglich zurückzugeben bzw. zu löschen.
+              </p>
+              <p class="mb-4">
+                9.3 AMASSA haftet nicht für Schäden, die durch Missbrauch von
+                Schlüsseln oder Codes durch Dritte entstehen, ausser bei
+                nachgewiesenem Verschulden.
+              </p>
+            </section>
+
+            <!-- 10. Höhere Gewalt -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                10. Höhere Gewalt
+              </h2>
+              <p class="mb-4">
+                AMASSA ist von der Erfüllung ihrer Verpflichtungen befreit,
+                soweit und solange die Erfüllung durch höhere Gewalt (z.B.
+                Naturkatastrophen, Krieg, Pandemien, behördliche Anordnungen)
+                unmöglich oder unzumutbar wird. Dies gilt auch für
+                Lieferverzögerungen aufgrund höherer Gewalt.
+              </p>
+            </section>
+
+            <!-- 11. Salvatorische Klausel -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                11. Salvatorische Klausel
+              </h2>
+              <p class="mb-4">
+                Sollten einzelne Bestimmungen dieser AGB unwirksam oder
+                undurchführbar sein oder werden, wird dadurch die Wirksamkeit
+                der übrigen Bestimmungen nicht berührt. Die unwirksame oder
+                undurchführbare Bestimmung ist durch eine wirksame oder
+                durchführbare Bestimmung zu ersetzen, die dem wirtschaftlichen
+                Zweck der unwirksamen oder undurchführbaren Bestimmung am
+                nächsten kommt.
+              </p>
+            </section>
+
+            <!-- 12. Anwendbares Recht -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                12. Anwendbares Recht und Gerichtsstand
+              </h2>
+              <p class="mb-4">
+                12.1 Für alle Rechtsbeziehungen zwischen AMASSA und dem
+                Auftraggeber gilt ausschliesslich schweizerisches Recht unter
+                Ausschluss des UN-Kaufrechts (CISG).
+              </p>
+              <p class="mb-4">
+                12.2 Ausschliesslicher Gerichtsstand für alle Streitigkeiten aus
+                oder im Zusammenhang mit diesem Vertrag ist Wittenbach, Schweiz.
+                AMASSA ist jedoch berechtigt, den Auftraggeber auch an seinem
+                allgemeinen Gerichtsstand zu verklagen.
+              </p>
+            </section>
+
+            <!-- 13. Änderungen der AGB -->
+            <section class="mb-10">
+              <h2 class="text-2xl font-bold text-amassa-blue mb-4">
+                13. Änderungen der AGB
+              </h2>
+              <p class="mb-4">
+                AMASSA behält sich das Recht vor, diese AGB jederzeit zu ändern.
+                Änderungen werden dem Auftraggeber mindestens 30 Tage vor
+                Inkrafttreten schriftlich mitgeteilt. Widerspricht der
+                Auftraggeber nicht innerhalb dieser Frist, gelten die geänderten
+                AGB als genehmigt.
+              </p>
+            </section>
+
+            <!-- Stand -->
+            <section class="border-t pt-6 mt-10">
+              <p class="text-sm text-gray-600">
+                <strong>Stand dieser AGB:</strong> Dezember 2024<br />
+                <strong>Letzte Aktualisierung:</strong> Dezember 2024
+              </p>
+            </section>
+
+            <!-- Kontakt -->
+            <section class="bg-blue-50 rounded-xl p-6 mt-10">
+              <h3 class="text-xl font-bold text-amassa-blue mb-4">
+                Fragen zu unseren AGB?
+              </h3>
+              <p class="mb-4">
+                Bei Fragen zu diesen Allgemeinen Geschäftsbedingungen stehen wir
+                Ihnen gerne zur Verfügung:
+              </p>
+              <p class="mb-2"><strong>AMASSA GmbH</strong></p>
+              <p class="mb-2">Romanshornerstrasse 25, 9300 Wittenbach</p>
+              <p class="mb-2">
+                Telefon:
+                <a
+                  href="tel:+41782662566"
+                  class="text-amassa-blue hover:underline"
+                  >+41 78 266 25 66</a
+                >
+              </p>
+              <p>
+                E-Mail:
+                <a
+                  href="mailto:info@amassa.ch"
+                  class="text-amassa-blue hover:underline"
+                  >info@amassa.ch</a
+                >
+              </p>
+            </section>
+          </div>
+
+          <!-- Back to Home -->
+          <div class="mt-12 pt-8 border-t">
+            <a
+              href="index.html"
+              class="inline-flex items-center gap-2 text-amassa-blue hover:text-amassa-teal font-semibold transition-colors"
+            >
+              <i data-lucide="arrow-left" class="w-5 h-5"></i>
+              Zurück zur Startseite
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer style="background: linear-gradient(135deg, #0d1a2e 0%, #1a3050 100%);" class="text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+        >
+          <p class="text-white/60">
+            © 2026 AMASSA GmbH. Alle Rechte vorbehalten.
+          </p>
+          <div class="flex gap-6 text-white/60">
+            <a
+              href="impressum.html"
+              class="hover:text-amassa-teal transition-colors"
+              >Impressum</a
+            >
+            <a
+              href="datenschutz.html"
+              class="hover:text-amassa-teal transition-colors"
+              >Datenschutz</a
+            >
+            <a
+              href="agb.html"
+              class="hover:text-amassa-teal transition-colors font-bold text-white"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener("click", () =>
+          navMenu.classList.toggle("active")
+        );
+      }
+
+      // Theme toggle (Hell-/Dunkelmodus)
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem("amassa-theme") || "light";
+        htmlEl.setAttribute("data-theme", savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = htmlEl.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          htmlEl.setAttribute("data-theme", newTheme);
+          localStorage.setItem("amassa-theme", newTheme);
+          updateThemeIcon(newTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        document.querySelectorAll(".theme-icon").forEach(function (icon) {
+          icon.setAttribute("data-lucide", theme === "light" ? "sun" : "moon");
+        });
+        lucide.createIcons();
+      }
+    </script>
+  </body>
+</html>

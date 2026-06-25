@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("amassa-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Praxisreinigung St. Gallen | Hygienische Reinigung für Praxen | AMASSA</title>
+    <meta
+      name="description"
+      content="Praxisreinigung in St. Gallen: hygienische und diskrete Reinigung für Arzt-, Zahnarzt- und Therapiepraxen nach höchsten Standards. Jetzt Offerte anfragen!"
+    />
+    <meta
+      name="keywords"
+      content="Praxisreinigung St. Gallen, Arztpraxis Reinigung, Zahnarztpraxis reinigen, Hygienereinigung, Desinfektionsreinigung Praxis"
+    />
+    <link rel="canonical" href="https://www.amassa.ch/praxisreinigung.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.amassa.ch/praxisreinigung.html" />
+    <meta property="og:title" content="Praxisreinigung St. Gallen | Hygienische Reinigung für Praxen | AMASSA" />
+    <meta property="og:description" content="Praxisreinigung in St. Gallen: hygienische und diskrete Reinigung für Arzt-, Zahnarzt- und Therapiepraxen nach höchsten Standards. Jetzt Offerte anfragen!" />
+    <meta property="og:image" content="https://www.amassa.ch/images/og-image.jpg" />
+    <meta property="og:locale" content="de_CH" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-blue-light": "#3D5A8F",
+              "amassa-teal": "#5B9BD5",
+              "amassa-green": "#70AD47",
+              "amassa-accent": "#FFC000",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      .nav-blur {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .image-placeholder {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #cbd5e0;
+        color: #64748b;
+      }
+      .service-detail-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+      }
+      .service-detail-card:hover {
+        border-left-color: #2b4c7e;
+        transform: translateX(4px);
+      }
+
+      /* Hero Top Bar (Reinigung - Blue) */
+      :root {
+        --primary: #2b4c7e;
+        --secondary: #5b9bd5;
+        --accent: #ffc000;
+        --text-primary: #1f2937;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        padding: 10rem 2rem 6rem;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .hero .container { max-width: 1280px; margin: 0 auto; }
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    
+      /* ============ Dark / Light Mode ============ */
+      html[data-theme="dark"] {
+        color-scheme: dark;
+      }
+      html[data-theme="dark"] body {
+        background-color: #0f172a;
+      }
+      html[data-theme="dark"] .bg-white {
+        background-color: #1a2332 !important;
+      }
+      html[data-theme="dark"] .bg-gray-50 {
+        background-color: #141b2b !important;
+      }
+      html[data-theme="dark"] .bg-gray-100 {
+        background-color: #1e293b !important;
+      }
+      html[data-theme="dark"] .bg-blue-50 {
+        background-color: rgba(91, 155, 213, 0.12) !important;
+      }
+      html[data-theme="dark"] .bg-blue-100 {
+        background-color: rgba(91, 155, 213, 0.2) !important;
+      }
+      html[data-theme="dark"] .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+      html[data-theme="dark"] .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+      html[data-theme="dark"] .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+      html[data-theme="dark"] .text-gray-600,
+      html[data-theme="dark"] .text-gray-500,
+      html[data-theme="dark"] .text-gray-400 {
+        color: #94a3b8 !important;
+      }
+      html[data-theme="dark"] .border-gray-100,
+      html[data-theme="dark"] .border-gray-200,
+      html[data-theme="dark"] .border-gray-300,
+      html[data-theme="dark"] .border-white {
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] .image-placeholder {
+        background: linear-gradient(135deg, #1e293b 0%, #2d3b4f 100%) !important;
+        color: #94a3b8 !important;
+        border-color: #334155 !important;
+      }
+      html[data-theme="dark"] #navbar.bg-white {
+        background-color: rgba(17, 24, 39, 0.97) !important;
+      }
+      html[data-theme="dark"] #navbar.nav-blur {
+        background-color: rgba(17, 24, 39, 0.85) !important;
+      }
+      html[data-theme="dark"] .shadow-md,
+      html[data-theme="dark"] .shadow-lg,
+      html[data-theme="dark"] .shadow-xl,
+      html[data-theme="dark"] .shadow-2xl {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      }
+      html[data-theme="dark"] input,
+      html[data-theme="dark"] select,
+      html[data-theme="dark"] textarea {
+        background-color: #1a2332 !important;
+        color: #e2e8f0 !important;
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] ::placeholder {
+        color: #64748b !important;
+      }
+
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        color: #2b4c7e;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+      .theme-toggle-btn:hover {
+        border-color: #2b4c7e;
+        transform: scale(1.05);
+      }
+      .theme-toggle-mobile-btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+      }
+      html[data-theme="dark"] .theme-toggle-btn {
+        background: #1e293b;
+        border-color: #334155;
+        color: #ffc000;
+      }
+
+      /* ===== AMASSA Shared Navbar (synced with reinigung.html) ===== */
+      .navbar {
+        --primary: #33539B;
+        --primary-dark: #2F3C8B;
+        --secondary: #4C9ACD;
+        --surface: #FFFFFF;
+        --surface-alt: #EEF3F8;
+        --text-primary: #2F3E4F;
+        --text-muted: #6E7C8C;
+        --border: #D9E2EC;
+        --shadow-sm: 0 2px 8px rgba(47, 60, 139, 0.08);
+        --shadow-md: 0 8px 24px rgba(47, 60, 139, 0.12);
+        --shadow-lg: 0 16px 48px rgba(47, 60, 139, 0.16);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      html[data-theme="dark"] .navbar {
+        --primary: #4C9ACD;
+        --primary-dark: #33539B;
+        --secondary: #8CA9C4;
+        --surface: #2d3748;
+        --surface-alt: #374151;
+        --text-primary: #f7fafc;
+        --text-muted: #cbd5e0;
+        --border: #4a5568;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar .navbar-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-left: -8px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .navbar .logo-img {
+        height: 48px;
+        width: auto;
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        list-style: none;
+      }
+
+      .navbar .nav-menu a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+
+      .navbar .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .navbar .nav-menu > li > a.active,
+      .navbar .nav-dropdown-toggle.active,
+      .navbar .nav-dropdown-menu li a.active {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .navbar .nav-dropdown {
+        position: relative;
+      }
+
+      .navbar .nav-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        white-space: nowrap;
+        transition: color 0.2s;
+        padding: 0;
+      }
+
+      .navbar .nav-dropdown-toggle:hover,
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle {
+        color: var(--primary);
+      }
+
+      .navbar .nav-dropdown-toggle i {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s ease;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle i {
+        transform: rotate(180deg);
+      }
+
+      .navbar .nav-dropdown-menu {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        min-width: 230px;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.2s ease;
+        z-index: 100;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .navbar .nav-dropdown-menu li a {
+        display: block;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .navbar .nav-dropdown-menu li a:hover {
+        background: var(--surface-alt);
+        color: var(--primary);
+      }
+
+
+      .navbar .nav-dropdown-category {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+      }
+      .navbar .nav-dropdown-category a {
+        display: block;
+        padding: 0.3rem 1rem 0.15rem;
+        color: var(--primary);
+        border-radius: 6px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+      .navbar .nav-dropdown-category a:hover {
+        background: var(--surface-alt);
+        color: var(--primary-dark) !important;
+      }
+      .navbar .nav-dropdown-category--border {
+        margin-top: 0.4rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .navbar .nav-dropdown-sub {
+        padding-left: 1.5rem !important;
+      }
+      .navbar .nav-dropdown-weiter {
+        padding-left: 1.5rem !important;
+        font-size: 0.78rem !important;
+        color: var(--primary) !important;
+        font-weight: 600 !important;
+        opacity: 0.75;
+      }
+      .navbar .nav-dropdown-weiter:hover {
+        opacity: 1;
+      }
+
+      .navbar .nav-dropdown-menu .nav-dropdown-overview {
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.85rem;
+      }
+
+      .navbar .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #FFFFFF !important;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+      }
+
+      .navbar .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .navbar .theme-toggle {
+        background: var(--surface-alt);
+        border: 2px solid var(--border);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: var(--text-primary);
+      }
+
+      .navbar .theme-toggle:hover {
+        border-color: var(--primary);
+        transform: scale(1.05);
+      }
+
+      .navbar .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 768px) {
+        .navbar .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .nav-menu.active {
+          display: flex;
+        }
+
+        .navbar .mobile-toggle {
+          display: block;
+        }
+
+        .navbar .nav-dropdown {
+          width: 100%;
+        }
+
+        .navbar .nav-dropdown-toggle {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .navbar .nav-dropdown-menu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          border: none;
+          background: var(--surface-alt);
+          margin: 0.5rem 0 0;
+          width: 100%;
+        }
+      }
+      /* ===== Per-destination hover colors (match hero of linked page) ===== */
+      .navbar .nav-menu a[href="hauswartung.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="hauswartung.html"]:hover { color: #70ad47 !important; }
+
+      .navbar .nav-menu a[href="abos-pakete.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="abos-pakete.html"]:hover { color: #ffc000 !important; }
+
+      .navbar .nav-menu a[href="referenzen.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="referenzen.html"]:hover { color: #ED2939 !important; }
+
+      .navbar .nav-menu a[href="ueber-uns.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="ueber-uns.html"]:hover { color: #5b4b9a !important; }
+  </style>
+
+    <!-- Schema.org Structured Data for Service -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Praxisreinigung",
+        "provider": {
+          "@type": "LocalBusiness",
+          "@id": "https://www.amassa.ch",
+          "name": "AMASSA GmbH",
+          "telephone": "+41782662566",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Romanshornerstrasse 25",
+            "addressLocality": "Wittenbach",
+            "postalCode": "9300",
+            "addressCountry": "CH"
+          }
+        },
+        "areaServed": [
+          { "@type": "City", "name": "St. Gallen" },
+          { "@type": "City", "name": "Zürich" },
+          { "@type": "City", "name": "Appenzell" },
+          { "@type": "City", "name": "Thurgau" },
+          { "@type": "City", "name": "Luzern" },
+          { "@type": "City", "name": "Basel" },
+          { "@type": "City", "name": "Bern" }
+        ],
+        "description": "Praxisreinigung in St. Gallen: hygienische und diskrete Reinigung für Arzt-, Zahnarzt- und Therapiepraxen nach höchsten Standards."
+      }
+    </script>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="logo-img" />
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="reinigung.html" class="nav-dropdown-toggle active">
+                        Reinigung <i data-lucide="chevron-down"></i>
+                    </a>
+                                                            <ul class="nav-dropdown-menu">
+                        <li><a href="reinigung.html" class="nav-dropdown-overview">Übersicht</a></li>
+                        <li class="nav-dropdown-category"><a href="reinigung.html#unterhaltsreinigung">Unterhaltsreinigung</a></li>
+                        <li><a href="unterhaltsreinigung.html" class="nav-dropdown-sub">Unterhaltsreinigung</a></li>
+                        <li><a href="bueroreinigung.html" class="nav-dropdown-sub">Büroreinigung</a></li>
+                        <li><a href="praxisreinigung.html" class="nav-dropdown-sub active">Praxisreinigung</a></li>
+                        <li><a href="reinigung.html#unterhaltsreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                        <li class="nav-dropdown-category nav-dropdown-category--border"><a href="reinigung.html#spezialreinigung">Spezialreinigung</a></li>
+                        <li><a href="baureinigung.html" class="nav-dropdown-sub">Baureinigung</a></li>
+                        <li><a href="endreinigung.html" class="nav-dropdown-sub">Endreinigung / Umzug</a></li>
+                        <li><a href="reinigung.html#spezialreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                    </ul>
+                </li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="reinigung.html#spezialreinigung" class="nav-dropdown-toggle">
+                        Spezialreinigung <i data-lucide="chevron-down"></i>
+                    </a>
+                                                            <ul class="nav-dropdown-menu">
+                        <li><a href="reinigung.html" class="nav-dropdown-overview">Übersicht</a></li>
+                        <li class="nav-dropdown-category"><a href="reinigung.html#unterhaltsreinigung">Unterhaltsreinigung</a></li>
+                        <li><a href="unterhaltsreinigung.html" class="nav-dropdown-sub">Unterhaltsreinigung</a></li>
+                        <li><a href="bueroreinigung.html" class="nav-dropdown-sub">Büroreinigung</a></li>
+                        <li><a href="praxisreinigung.html" class="nav-dropdown-sub active">Praxisreinigung</a></li>
+                        <li><a href="reinigung.html#unterhaltsreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                        <li class="nav-dropdown-category nav-dropdown-category--border"><a href="reinigung.html#spezialreinigung">Spezialreinigung</a></li>
+                        <li><a href="baureinigung.html" class="nav-dropdown-sub">Baureinigung</a></li>
+                        <li><a href="endreinigung.html" class="nav-dropdown-sub">Endreinigung / Umzug</a></li>
+                        <li><a href="reinigung.html#spezialreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                    </ul>
+                </li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html">Abos & Pakete</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i data-lucide="sun" class="theme-icon"></i>
+                    </button>
+                </li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte anfragen</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Top Bar -->
+    <section class="hero">
+      <div class="container">
+        <h1>Praxisreinigung</h1>
+        <p>Hygienische Sauberkeit für Praxen und medizinische Einrichtungen</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div id="praxisreinigung" class="mb-20 scroll-mt-32">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <!-- PLACEHOLDER: Praxisreinigung image -->
+              <img
+                src="images/illustrations/praxisreinigung.svg"
+                alt="Illustration: Professionelle Praxisreinigung für Arzt- und Zahnarztpraxen"
+                class="rounded-2xl h-96 shadow-xl w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="order-1 lg:order-2">
+              <div class="inline-block mb-4">
+                <a
+                  href="reinigung.html"
+                  class="inline-flex items-center gap-2 bg-amassa-blue/10 text-amassa-blue px-4 py-2 rounded-full text-sm font-bold hover:bg-amassa-blue/20 transition-colors"
+                  ><i data-lucide="arrow-left" class="w-4 h-4"></i> Alle
+                  Reinigungsservices</a
+                >
+              </div>
+              <h3 class="text-4xl font-display font-bold text-amassa-blue mb-6">
+                Praxisreinigung
+              </h3>
+              <p class="text-lg text-gray-700 mb-6">
+                Arzt- und Zahnarztpraxen benötigen eine besonders sorgfältige
+                und hygienisch einwandfreie Reinigung. Wir kennen die speziellen
+                Anforderungen und setzen sie mit größter Sorgfalt um.
+              </p>
+
+              <div class="bg-blue-50 rounded-xl p-5 mb-6">
+                <h5
+                  class="font-bold text-amassa-blue mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                  Höchste Hygienestandards
+                </h5>
+                <p class="text-gray-700 text-sm mb-3">
+                  Wir verwenden spezielle Desinfektionsmittel und befolgen
+                  strenge Hygieneprotokolle für medizinische Einrichtungen.
+                </p>
+              </div>
+
+              <div class="space-y-3 mb-6">
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <h5 class="font-bold text-gray-800 mb-2">Behandlungsräume</h5>
+                  <p class="text-sm text-gray-600">
+                    Desinfizierende Reinigung aller Oberflächen, Geräte und
+                    Instrumente nach höchsten Standards
+                  </p>
+                </div>
+
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <h5 class="font-bold text-gray-800 mb-2">
+                    Wartebereich & Empfang
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Freundliche, saubere Atmosphäre für Ihre Patienten
+                  </p>
+                </div>
+
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <h5 class="font-bold text-gray-800 mb-2">Sanitäranlagen</h5>
+                  <p class="text-sm text-gray-600">
+                    Intensive Reinigung und Desinfektion
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 text-sm mb-6">
+                <div class="flex items-center gap-2 text-gray-700">
+                  <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                  <span>Arztpraxen</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700">
+                  <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                  <span>Zahnarztpraxen</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700">
+                  <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                  <span>Physiotherapie</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700">
+                  <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                  <span>Tierarztpraxen</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="kontakt.html"
+                  class="bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue-light text-center transition-all"
+                >
+                  Offerte für Praxisreinigung
+                </a>
+                <a
+                  href="tel:+41782662566"
+                  class="border-2 border-amassa-blue text-amassa-blue px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue hover:text-white text-center transition-all"
+                >
+                  Telefonisch anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-r from-amassa-blue to-amassa-teal text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Bereit für hygienische Sauberkeit?</h2>
+        <p class="text-xl md:text-2xl mb-10">Kontaktieren Sie uns jetzt für eine kostenlose Beratung und Offerte</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="kontakt.html" class="bg-amassa-accent text-amassa-blue px-10 py-5 rounded-xl font-bold text-lg hover:bg-opacity-90 shadow-2xl transition-all">Kostenlose Offerte einholen</a>
+          <a href="tel:+41782662566" class="bg-white/10 backdrop-blur border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">+41 78 266 25 66</a>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background: linear-gradient(135deg, #0d1a2e 0%, #1a3050 100%);" class="text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="h-12 w-auto" />
+            </div>
+            <p class="text-white/70 text-sm mb-6">
+              Ihr Partner für professionelle Reinigung und Hauswartung in der
+              ganzen Schweiz.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Reinigung</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="reinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Übersicht</a
+                >
+              </li>
+              <li>
+                <a
+                  href="baureinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Baureinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="bueroreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Büroreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="endreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Endreinigung / Umzug</a
+                >
+              </li>
+              <li>
+                <a
+                  href="praxisreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Praxisreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unterhaltsreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Unterhaltsreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#spezial"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Spezialreinigungen</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Unternehmen</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="hauswartung.html"
+                  class="hover:text-amassa-green transition-colors"
+                  >Hauswartung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="abos-pakete.html"
+                  class="hover:text-amassa-accent transition-colors"
+                  >Abos & Pakete</a
+                >
+              </li>
+              <li>
+                <a
+                  href="referenzen.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Referenzen & Partner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ueber-uns.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="kontakt.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Kontakt</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Kontakt</h4>
+            <ul class="space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 flex-shrink-0 mt-0.5 text-amassa-teal"
+                ></i>
+                <div>Romanshornerstrasse 25<br />9300 Wittenbach</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="tel:+41782662566"
+                  class="hover:text-amassa-teal transition-colors"
+                  >+41 78 266 25 66</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="mailto:info@amassa.ch"
+                  class="hover:text-amassa-teal transition-colors"
+                  >info@amassa.ch</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+          >
+            <p class="text-white/60">
+              © 2026 AMASSA GmbH. Alle Rechte vorbehalten.
+            </p>
+            <div class="flex gap-6 text-white/60">
+              <a
+                href="impressum.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Impressum</a
+              >
+              <a
+                href="datenschutz.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Datenschutz</a
+              >
+              <a
+                href="agb.html"
+                class="hover:text-amassa-teal transition-colors"
+                >AGB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+      }
+
+      // Theme toggle (Hell-/Dunkelmodus)
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        htmlEl.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = htmlEl.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          htmlEl.setAttribute('data-theme', newTheme);
+          localStorage.setItem('amassa-theme', newTheme);
+          updateThemeIcon(newTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        document.querySelectorAll('.theme-icon').forEach(function (icon) {
+          icon.setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+        });
+        lucide.createIcons();
+      }
+
+    </script>
+  </body>
+</html>

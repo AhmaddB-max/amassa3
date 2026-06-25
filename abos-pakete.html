@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("amassa-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Haushaltsreinigung Abos & Pakete | Private Reinigungsdienste St. Gallen |
+      AMASSA
+    </title>
+    <meta
+      name="description"
+      content="AMASSA Reinigungsabos für Privatkunden: HOME PREMIUM (3x/Woche), HOME PLUS (1x/Woche), HOME BASIC (monatlich). Plus Pakete für Events & Feiertage. ☎ +41 78 266 25 66"
+    />
+    <meta
+      name="keywords"
+      content="Haushaltsreinigung Abo, Putzfrau St. Gallen, Reinigungsservice Privat, Frühlingsputz, Umzugsreinigung Privat"
+    />
+    <link rel="canonical" href="https://www.amassa.ch/abos-pakete.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.amassa.ch/abos-pakete.html" />
+    <meta
+      property="og:title"
+      content="Haushaltsreinigung Abos & Pakete | Private Reinigungsdienste St. Gallen | AMASSA"
+    />
+    <meta
+      property="og:description"
+      content="AMASSA Reinigungsabos für Privatkunden: HOME PREMIUM (3x/Woche), HOME PLUS (1x/Woche), HOME BASIC (monatlich). Plus Pakete für Events & Feiertage. ☎ +41 78 266 25 66"
+    />
+    <meta
+      property="og:image"
+      content="https://www.amassa.ch/images/og-image.jpg"
+    />
+    <meta property="og:locale" content="de_CH" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-teal": "#5B9BD5",
+              "amassa-green": "#70AD47",
+              "amassa-accent": "#FFC000",
+              "amassa-accent-light": "#FFD133",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      .nav-blur {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .image-placeholder {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #cbd5e0;
+        color: #64748b;
+      }
+      .abo-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 3px solid transparent;
+      }
+      .abo-card:hover {
+        transform: translateY(-12px);
+        border-color: #ffc000;
+        box-shadow: 0 24px 48px rgba(255, 192, 0, 0.25);
+      }
+      .package-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+      }
+      .package-card:hover {
+        border-left-color: #ffc000;
+        transform: translateX(4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hero Top Bar (Abos & Pakete - Yellow) */
+      :root {
+        --primary: #ffc000;
+        --secondary: #ffd84d;
+        --accent: #2b4c7e;
+        --text-primary: #1f2937;
+      }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        padding: 10rem 2rem 6rem;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .hero .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .hero h1,
+      .hero .hero-heading {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+        color: rgba(31, 41, 55, 0.85);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* ============ Dark / Light Mode ============ */
+      html[data-theme="dark"] {
+        color-scheme: dark;
+      }
+      html[data-theme="dark"] body {
+        background-color: #0f172a;
+      }
+      html[data-theme="dark"] .bg-white {
+        background-color: #1a2332 !important;
+      }
+      html[data-theme="dark"] .bg-gray-50 {
+        background-color: #141b2b !important;
+      }
+      html[data-theme="dark"] .bg-gray-100 {
+        background-color: #1e293b !important;
+      }
+      html[data-theme="dark"] .bg-blue-50 {
+        background-color: rgba(91, 155, 213, 0.12) !important;
+      }
+      html[data-theme="dark"] .bg-blue-100 {
+        background-color: rgba(91, 155, 213, 0.2) !important;
+      }
+      html[data-theme="dark"] .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+      html[data-theme="dark"] .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+      html[data-theme="dark"] .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+      html[data-theme="dark"] .text-gray-600,
+      html[data-theme="dark"] .text-gray-500,
+      html[data-theme="dark"] .text-gray-400 {
+        color: #94a3b8 !important;
+      }
+      html[data-theme="dark"] .border-gray-100,
+      html[data-theme="dark"] .border-gray-200,
+      html[data-theme="dark"] .border-gray-300,
+      html[data-theme="dark"] .border-white {
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] .image-placeholder {
+        background: linear-gradient(
+          135deg,
+          #1e293b 0%,
+          #2d3b4f 100%
+        ) !important;
+        color: #94a3b8 !important;
+        border-color: #334155 !important;
+      }
+      html[data-theme="dark"] #navbar.bg-white {
+        background-color: rgba(17, 24, 39, 0.97) !important;
+      }
+      html[data-theme="dark"] #navbar.nav-blur {
+        background-color: rgba(17, 24, 39, 0.85) !important;
+      }
+      html[data-theme="dark"] .shadow-md,
+      html[data-theme="dark"] .shadow-lg,
+      html[data-theme="dark"] .shadow-xl,
+      html[data-theme="dark"] .shadow-2xl {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      }
+      html[data-theme="dark"] input,
+      html[data-theme="dark"] select,
+      html[data-theme="dark"] textarea {
+        background-color: #1a2332 !important;
+        color: #e2e8f0 !important;
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] ::placeholder {
+        color: #64748b !important;
+      }
+
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        color: #2b4c7e;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+      .theme-toggle-btn:hover {
+        border-color: #2b4c7e;
+        transform: scale(1.05);
+      }
+      .theme-toggle-mobile-btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+      }
+      html[data-theme="dark"] .theme-toggle-btn {
+        background: #1e293b;
+        border-color: #334155;
+        color: #ffc000;
+      }
+
+      /* ===== AMASSA Shared Navbar (synced with reinigung.html) ===== */
+      .navbar {
+        --primary: #33539B;
+        --primary-dark: #2F3C8B;
+        --secondary: #4C9ACD;
+        --surface: #FFFFFF;
+        --surface-alt: #EEF3F8;
+        --text-primary: #2F3E4F;
+        --text-muted: #6E7C8C;
+        --border: #D9E2EC;
+        --shadow-sm: 0 2px 8px rgba(47, 60, 139, 0.08);
+        --shadow-md: 0 8px 24px rgba(47, 60, 139, 0.12);
+        --shadow-lg: 0 16px 48px rgba(47, 60, 139, 0.16);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      html[data-theme="dark"] .navbar {
+        --primary: #4C9ACD;
+        --primary-dark: #33539B;
+        --secondary: #8CA9C4;
+        --surface: #2d3748;
+        --surface-alt: #374151;
+        --text-primary: #f7fafc;
+        --text-muted: #cbd5e0;
+        --border: #4a5568;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar .navbar-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-left: -8px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .navbar .logo-img {
+        height: 48px;
+        width: auto;
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        list-style: none;
+      }
+
+      .navbar .nav-menu a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        transition: color 0.2s;
+      }
+
+      .navbar .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .navbar .nav-menu > li > a.active,
+      .navbar .nav-dropdown-toggle.active,
+      .navbar .nav-dropdown-menu li a.active {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .navbar .nav-dropdown {
+        position: relative;
+      }
+
+      .navbar .nav-dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 0.875rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        white-space: nowrap;
+        transition: color 0.2s;
+        padding: 0;
+      }
+
+      .navbar .nav-dropdown-toggle:hover,
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle {
+        color: var(--primary);
+      }
+
+      .navbar .nav-dropdown-toggle i {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s ease;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-toggle i {
+        transform: rotate(180deg);
+      }
+
+      .navbar .nav-dropdown-menu {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        min-width: 230px;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.2s ease;
+        z-index: 100;
+      }
+
+      .navbar .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .navbar .nav-dropdown-menu li a {
+        display: block;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .navbar .nav-dropdown-menu li a:hover {
+        background: var(--surface-alt);
+        color: var(--primary);
+      }
+
+
+      .navbar .nav-dropdown-category {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+      }
+      .navbar .nav-dropdown-category a {
+        display: block;
+        padding: 0.3rem 1rem 0.15rem;
+        color: var(--primary);
+        border-radius: 6px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+      .navbar .nav-dropdown-category a:hover {
+        background: var(--surface-alt);
+        color: var(--primary-dark) !important;
+      }
+      .navbar .nav-dropdown-category--border {
+        margin-top: 0.4rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .navbar .nav-dropdown-sub {
+        padding-left: 1.5rem !important;
+      }
+      .navbar .nav-dropdown-weiter {
+        padding-left: 1.5rem !important;
+        font-size: 0.78rem !important;
+        color: var(--primary) !important;
+        font-weight: 600 !important;
+        opacity: 0.75;
+      }
+      .navbar .nav-dropdown-weiter:hover {
+        opacity: 1;
+      }
+
+      .navbar .nav-dropdown-menu .nav-dropdown-overview {
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.85rem;
+      }
+
+      .navbar .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #FFFFFF !important;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+      }
+
+      .navbar .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .navbar .theme-toggle {
+        background: var(--surface-alt);
+        border: 2px solid var(--border);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: var(--text-primary);
+      }
+
+      .navbar .theme-toggle:hover {
+        border-color: var(--primary);
+        transform: scale(1.05);
+      }
+
+      .navbar .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 768px) {
+        .navbar .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .nav-menu.active {
+          display: flex;
+        }
+
+        .navbar .mobile-toggle {
+          display: block;
+        }
+
+        .navbar .nav-dropdown {
+          width: 100%;
+        }
+
+        .navbar .nav-dropdown-toggle {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .navbar .nav-dropdown-menu {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          border: none;
+          background: var(--surface-alt);
+          margin: 0.5rem 0 0;
+          width: 100%;
+        }
+      }
+      /* ===== Per-destination hover colors (match hero of linked page) ===== */
+      .navbar .nav-menu a[href="hauswartung.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="hauswartung.html"]:hover { color: #70ad47 !important; }
+
+      .navbar .nav-menu a[href="abos-pakete.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="abos-pakete.html"]:hover { color: #ffc000 !important; }
+
+      .navbar .nav-menu a[href="referenzen.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="referenzen.html"]:hover { color: #ED2939 !important; }
+
+      .navbar .nav-menu a[href="ueber-uns.html"]:hover,
+      .navbar .nav-dropdown-menu a[href="ueber-uns.html"]:hover { color: #5b4b9a !important; }
+    </style>
+
+    <!-- Schema.org Structured Data for Service -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Reinigungsabonnements für Privatkunden",
+        "provider": {
+          "@type": "LocalBusiness",
+          "@id": "https://www.amassa.ch",
+          "name": "AMASSA GmbH",
+          "telephone": "+41782662566",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Romanshornerstrasse 25",
+            "addressLocality": "Wittenbach",
+            "postalCode": "9300",
+            "addressCountry": "CH"
+          }
+        },
+        "areaServed": [
+          { "@type": "City", "name": "St. Gallen" },
+          { "@type": "City", "name": "Zürich" },
+          { "@type": "City", "name": "Appenzell" },
+          { "@type": "City", "name": "Thurgau" },
+          { "@type": "City", "name": "Luzern" },
+          { "@type": "City", "name": "Basel" },
+          { "@type": "City", "name": "Bern" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Reinigungsabos & Pakete",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "HOME PREMIUM (3x pro Woche)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "HOME PLUS (1x pro Woche)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "HOME BASIC (monatlich)"
+              }
+            }
+          ]
+        },
+        "description": "AMASSA Reinigungsabos für Privatkunden: HOME PREMIUM (3x/Woche), HOME PLUS (1x/Woche), HOME BASIC (monatlich). Plus Pakete für Events & Feiertage."
+      }
+    </script>
+  
+    <!-- Page-specific active nav color -->
+    <style>
+      .navbar .nav-menu a[href="abos-pakete.html"].active,
+      .navbar .nav-menu a[href="abos-pakete.html"] {
+        color: #ffc000 !important;
+      }
+      .navbar .nav-menu a[href="abos-pakete.html"]:hover {
+        color: #ffc000 !important;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="logo-img" />
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="reinigung.html" class="nav-dropdown-toggle">
+                        Reinigung <i data-lucide="chevron-down"></i>
+                    </a>
+                                                            <ul class="nav-dropdown-menu">
+                        <li><a href="reinigung.html" class="nav-dropdown-overview">Übersicht</a></li>
+                        <li class="nav-dropdown-category"><a href="reinigung.html#unterhaltsreinigung">Unterhaltsreinigung</a></li>
+                        <li><a href="unterhaltsreinigung.html" class="nav-dropdown-sub">Unterhaltsreinigung</a></li>
+                        <li><a href="bueroreinigung.html" class="nav-dropdown-sub">Büroreinigung</a></li>
+                        <li><a href="praxisreinigung.html" class="nav-dropdown-sub">Praxisreinigung</a></li>
+                        <li><a href="reinigung.html#unterhaltsreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                        <li class="nav-dropdown-category nav-dropdown-category--border"><a href="reinigung.html#spezialreinigung">Spezialreinigung</a></li>
+                        <li><a href="baureinigung.html" class="nav-dropdown-sub">Baureinigung</a></li>
+                        <li><a href="endreinigung.html" class="nav-dropdown-sub">Endreinigung / Umzug</a></li>
+                        <li><a href="reinigung.html#spezialreinigung" class="nav-dropdown-weiter">Weiter →</a></li>
+                    </ul>
+                </li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html" class="active">Abos & Pakete</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i data-lucide="sun" class="theme-icon"></i>
+                    </button>
+                </li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte anfragen</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Top Bar -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-heading">Abos & Pakete</div>
+        <p>Flexible Reinigungslösungen für jeden Bedarf</p>
+      </div>
+    </section>
+
+    <!-- Page Hero -->
+    <section
+      class="py-20 bg-gradient-to-br from-yellow-50 via-white to-yellow-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-block mb-4">
+              <span
+                class="bg-amassa-accent/20 text-amassa-accent px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide"
+                >Für Privatkunden</span
+              >
+            </div>
+            <h1
+              class="text-5xl md:text-6xl font-display font-bold text-amassa-blue mb-6 leading-tight"
+            >
+              Abos & Pakete für Ihr Zuhause
+            </h1>
+            <p class="text-xl text-amassa-blue mb-4 font-semibold">
+              Regelmässige Reinigung im Abo oder massgeschneiderte Pakete für
+              besondere Anlässe
+            </p>
+            <p class="text-lg text-gray-600 mb-8">
+              Geniessen Sie ein dauerhaft sauberes Zuhause mit unseren flexiblen
+              Reinigungsabos – oder buchen Sie unsere spezialisierten Pakete für
+              Frühlingsputz, Events, Feiertage und mehr.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a
+                href="#abos"
+                class="bg-amassa-accent text-amassa-blue px-8 py-4 rounded-lg font-bold text-lg hover:bg-amassa-accent-light shadow-lg text-center transition-all"
+              >
+                Abos ansehen
+              </a>
+              <a
+                href="#pakete"
+                class="border-2 border-amassa-accent text-amassa-accent px-8 py-4 rounded-lg font-bold text-lg hover:bg-amassa-accent hover:text-white transition-all text-center"
+              >
+                Pakete ansehen
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-6 text-sm text-gray-700">
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-amassa-accent"
+                ></i>
+                <span>Flexible Laufzeiten</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-amassa-accent"
+                ></i>
+                <span>Professionelles Team</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check-circle"
+                  class="w-5 h-5 text-amassa-accent"
+                ></i>
+                <span>Faire Preise</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <!-- PLACEHOLDER: Abos & Pakete hero image -->
+            <img
+              src="images/illustrations/abos-pakete.svg"
+              alt="Illustration: AMASSA Abos und Pakete für regelmässige Reinigung"
+              class="rounded-3xl h-96 shadow-2xl w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOS SECTION -->
+    <section id="abos" class="py-24 bg-white scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="inline-block mb-4">
+            <span
+              class="text-amassa-accent font-semibold uppercase tracking-wider text-sm"
+              >Regelmässige Reinigung</span
+            >
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6"
+          >
+            Unsere Reinigungsabos
+          </h2>
+          <p class="text-xl text-gray-900 max-w-3xl mx-auto">
+            Wählen Sie das passende Abo für Ihren Haushalt – von intensiver
+            Betreuung bis zur monatlichen Grundreinigung
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- ABO 1: HOME PREMIUM -->
+          <div
+            class="abo-card bg-gradient-to-br from-white to-yellow-50 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-amassa-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+              >
+                <i data-lucide="sparkles" class="w-10 h-10 text-white"></i>
+              </div>
+              <h3 class="text-3xl font-display font-bold text-amassa-blue mb-2">
+                HOME PREMIUM
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Das Komplettpaket für Ihr Zuhause
+              </p>
+              <div class="mb-4">
+                <div class="text-5xl font-bold text-amassa-accent mb-2">3x</div>
+                <div class="text-lg text-gray-700">pro Woche</div>
+              </div>
+              <div
+                class="bg-amassa-accent/10 rounded-lg px-4 py-2 inline-block"
+              >
+                <span class="text-sm font-bold text-amassa-accent"
+                  >★ Beliebteste Wahl</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h4 class="font-bold text-gray-800 mb-4">Was ist enthalten:</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Böden:</strong> Staubsaugen, Wischen, Pflegen</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Bad/WC:</strong> Komplettreinigung inkl.
+                    Armaturen</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Küche:</strong> Arbeitsflächen, Herd, Spüle</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Oberflächen:</strong> Abstauben aller zugänglichen
+                    Bereiche</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Müll:</strong> Leeren und neue Säcke
+                    einsetzen</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-8 bg-gray-50 rounded-xl p-4">
+              <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                <i data-lucide="heart" class="w-5 h-5 text-amassa-accent"></i>
+                Ideal für:
+              </h5>
+              <p class="text-sm text-gray-600">
+                Berufstätige, Familien oder alle, die dauerhaft ein perfekt
+                sauberes Zuhause möchten ohne selbst putzen zu müssen.
+              </p>
+            </div>
+
+            <a
+              href="kontakt.html"
+              class="block w-full bg-amassa-accent text-white text-center px-6 py-4 rounded-xl font-bold text-lg hover:bg-amassa-accent-light shadow-lg transition-all"
+            >
+              HOME PREMIUM buchen
+            </a>
+          </div>
+
+          <!-- ABO 2: HOME PLUS -->
+          <div
+            class="abo-card bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-amassa-teal rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+              >
+                <i data-lucide="home" class="w-10 h-10 text-white"></i>
+              </div>
+              <h3 class="text-3xl font-display font-bold text-amassa-blue mb-2">
+                HOME PLUS
+              </h3>
+              <p class="text-gray-600 mb-4">Der beste Mittelweg</p>
+              <div class="mb-4">
+                <div class="text-5xl font-bold text-amassa-teal mb-2">1x</div>
+                <div class="text-lg text-gray-700">pro Woche</div>
+              </div>
+              <div class="bg-amassa-teal/10 rounded-lg px-4 py-2 inline-block">
+                <span class="text-sm font-bold text-amassa-teal"
+                  >Ausgewogenes Preis-Leistungs-Verhältnis</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h4 class="font-bold text-gray-800 mb-4">Was ist enthalten:</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Böden:</strong> Staubsaugen & Wischen</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Bad/WC:</strong> Gründliche Reinigung</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Küche:</strong> Arbeitsflächen & Herd</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Oberflächen:</strong> Regelmässiges Abstauben</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-teal flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Müll:</strong> Entleeren</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-8 bg-gray-50 rounded-xl p-4">
+              <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                <i data-lucide="heart" class="w-5 h-5 text-amassa-teal"></i>
+                Ideal für:
+              </h5>
+              <p class="text-sm text-gray-600">
+                Haushalte, die regelmässige Unterstützung möchten, aber zwischen
+                den Reinigungen selbst etwas Ordnung halten.
+              </p>
+            </div>
+
+            <a
+              href="kontakt.html"
+              class="block w-full bg-amassa-teal text-white text-center px-6 py-4 rounded-xl font-bold text-lg hover:bg-amassa-teal/90 shadow-lg transition-all"
+            >
+              HOME PLUS buchen
+            </a>
+          </div>
+
+          <!-- ABO 3: HOME BASIC -->
+          <div
+            class="abo-card bg-gradient-to-br from-white to-green-50 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-amassa-green rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+              >
+                <i data-lucide="calendar" class="w-10 h-10 text-white"></i>
+              </div>
+              <h3 class="text-3xl font-display font-bold text-amassa-blue mb-2">
+                HOME BASIC
+              </h3>
+              <p class="text-gray-600 mb-4">Die Grundreinigung</p>
+              <div class="mb-4">
+                <div class="text-5xl font-bold text-amassa-green mb-2">1x</div>
+                <div class="text-lg text-gray-700">pro Monat</div>
+              </div>
+              <div class="bg-amassa-green/10 rounded-lg px-4 py-2 inline-block">
+                <span class="text-sm font-bold text-amassa-green"
+                  >Monatliche Intensivreinigung</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h4 class="font-bold text-gray-800 mb-4">Was ist enthalten:</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-green flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Intensivreinigung:</strong> Gründlicher als
+                    Standardreinigung</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-green flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Alle Böden:</strong> Saugen, Wischen, Pflegen</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-green flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Bad/WC:</strong> Tiefenreinigung</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-green flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Küche:</strong> Komplettreinigung inkl. Backofen
+                    (aussen)</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-amassa-green flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span class="text-gray-700"
+                    ><strong>Detailbereiche:</strong> Nach Bedarf &
+                    Absprache</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-8 bg-gray-50 rounded-xl p-4">
+              <h5 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                <i data-lucide="heart" class="w-5 h-5 text-amassa-green"></i>
+                Ideal für:
+              </h5>
+              <p class="text-sm text-gray-600">
+                Kleinere Haushalte oder Personen, die selbst viel putzen, aber
+                monatlich eine Grundreinigung wünschen.
+              </p>
+            </div>
+
+            <a
+              href="kontakt.html"
+              class="block w-full bg-amassa-green text-white text-center px-6 py-4 rounded-xl font-bold text-lg hover:bg-amassa-green/90 shadow-lg transition-all"
+            >
+              HOME BASIC buchen
+            </a>
+          </div>
+        </div>
+
+        <!-- Abo Benefits -->
+        <div
+          class="bg-gradient-to-br from-yellow-50 to-white rounded-3xl p-8 md:p-12 border-2 border-amassa-accent/20"
+        >
+          <h3
+            class="text-3xl font-display font-bold text-amassa-blue mb-8 text-center"
+          >
+            Was alle Abos gemeinsam haben
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i
+                  data-lucide="calendar-x"
+                  class="w-8 h-8 text-amassa-accent"
+                ></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2">
+                Keine Mindestlaufzeit
+              </h4>
+              <p class="text-sm text-gray-600">
+                Monatlich kündbar, volle Flexibilität
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="users" class="w-8 h-8 text-amassa-accent"></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2">Festes Team</h4>
+              <p class="text-sm text-gray-600">
+                Ihre persönlichen Reinigungsprofis
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i
+                  data-lucide="shield-check"
+                  class="w-8 h-8 text-amassa-accent"
+                ></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2">Versichert & geprüft</h4>
+              <p class="text-sm text-gray-600">Volle Haftpflichtversicherung</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="leaf" class="w-8 h-8 text-amassa-accent"></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2">Öko-Reinigungsmittel</h4>
+              <p class="text-sm text-gray-600">
+                Umweltfreundlich & hautschonend
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAKETE SECTION -->
+    <section
+      id="pakete"
+      class="py-24 bg-gradient-to-br from-gray-50 to-white scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="inline-block mb-4">
+            <span
+              class="text-amassa-accent font-semibold uppercase tracking-wider text-sm"
+              >Einmalige Reinigungen</span
+            >
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6"
+          >
+            Unsere Reinigungspakete
+          </h2>
+          <p class="text-xl text-gray-900 max-w-3xl mx-auto">
+            Massgeschneiderte Pakete für besondere Anlässe – perfekt für Events,
+            Feiertage oder den saisonalen Frühlingsputz
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- PAKET 1: Frühlingsputz -->
+          <div
+            class="package-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i
+                  data-lucide="flower-2"
+                  class="w-8 h-8 text-amassa-accent"
+                ></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-amassa-accent mb-2">
+                  Frühlingsputz-Paket
+                </h3>
+                <p class="text-gray-600">
+                  Gründlicher Neustart für Ihr Zuhause
+                </p>
+              </div>
+            </div>
+
+            <p class="text-gray-700 mb-6">
+              Mit Fokus auf intensive Reinigung und saisonale Auffrischung. Wir
+              entfernen den Winterstaub und bringen Ihr Zuhause zum Strahlen.
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-5 mb-6">
+              <h4 class="font-bold text-gray-800 mb-3">Das Paket umfasst:</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Fenster innen & aussen reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Lamellen- & Rollläden säubern</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Schränke aussen abwischen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Türen & Türrahmen reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Heizkörper abstauben & reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Böden gründlich reinigen & pflegen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Küche & Bad intensiv</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-600">
+                <i data-lucide="clock" class="w-4 h-4 inline mr-1"></i>
+                Empfohlen: Frühling & Herbst
+              </div>
+              <a
+                href="kontakt.html"
+                class="bg-amassa-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-accent-light transition-all"
+              >
+                Paket buchen
+              </a>
+            </div>
+          </div>
+
+          <!-- PAKET 2: Besuchsbereit -->
+          <div
+            class="package-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i
+                  data-lucide="users-round"
+                  class="w-8 h-8 text-amassa-accent"
+                ></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-amassa-accent mb-2">
+                  Besuchsbereit-Paket
+                </h3>
+                <p class="text-gray-600">Perfekt vorbereitet für Ihre Gäste</p>
+              </div>
+            </div>
+
+            <p class="text-gray-700 mb-6">
+              Gezielte Reinigung vor Gästen mit Fokus auf sichtbare und stark
+              wahrgenommene Bereiche. Hinterlassen Sie den perfekten Eindruck.
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-5 mb-6">
+              <h4 class="font-bold text-gray-800 mb-3">Das Paket umfasst:</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Eingangsbereiche & Flure perfekt sauber</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Wohn- & Essbereiche gründlich</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Gäste-WC tadellos reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Küche aufräumen & säubern</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Alle Oberflächen polieren</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Böden saugen & wischen</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-600">
+                <i data-lucide="clock" class="w-4 h-4 inline mr-1"></i>
+                Kurzfristig buchbar (48h vorher)
+              </div>
+              <a
+                href="kontakt.html"
+                class="bg-amassa-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-accent-light transition-all"
+              >
+                Paket buchen
+              </a>
+            </div>
+          </div>
+
+          <!-- PAKET 3: Feiertags-Paket -->
+          <div
+            class="package-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="gift" class="w-8 h-8 text-amassa-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-amassa-accent mb-2">
+                  Feiertags-Paket
+                </h3>
+                <p class="text-gray-600">Festlich sauber für besondere Tage</p>
+              </div>
+            </div>
+
+            <p class="text-gray-700 mb-6">
+              Umfassendere Vorbereitung für besondere Festtage, vor allem in
+              Wohn-, Ess- und Küchenbereichen. Perfekt für Weihnachten, Ostern
+              oder Geburtstagsfeiern.
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-5 mb-6">
+              <h4 class="font-bold text-gray-800 mb-3">Das Paket umfasst:</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Komplette Wohnbereiche intensiv reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Küche inklusive Backofen & Kühlschrank</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Esszimmer & Tische polieren</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Alle Sanitäranlagen tadellos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Fenster & Spiegel streifenfrei</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Dekoration & Details entstauben</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-600">
+                <i data-lucide="clock" class="w-4 h-4 inline mr-1"></i>
+                Ideal: Weihnachten, Ostern, Geburtstage
+              </div>
+              <a
+                href="kontakt.html"
+                class="bg-amassa-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-accent-light transition-all"
+              >
+                Paket buchen
+              </a>
+            </div>
+          </div>
+
+          <!-- PAKET 4: Event-Reinigung -->
+          <div
+            class="package-card bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-16 h-16 bg-amassa-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i
+                  data-lucide="party-popper"
+                  class="w-8 h-8 text-amassa-accent"
+                ></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-amassa-accent mb-2">
+                  Event-Reinigung-Paket
+                </h3>
+                <p class="text-gray-600">Vor oder nach Ihrem Event</p>
+              </div>
+            </div>
+
+            <p class="text-gray-700 mb-6">
+              Reinigung vor oder nach einem Anlass, damit Räume sauber
+              vorbereitet oder rasch wieder in Ordnung gebracht werden. Perfekt
+              für Partys, Firmenfeiern oder Hochzeiten.
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-5 mb-6">
+              <h4 class="font-bold text-gray-800 mb-3">Das Paket umfasst:</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span
+                    ><strong>VOR Event:</strong> Gründliche Vorbereitung aller
+                    Räume</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span
+                    ><strong>NACH Event:</strong> Komplette Reinigung &
+                    Aufräumen</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Entsorgung von Müll & Flaschen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Böden & Teppiche saugen/reinigen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Küche & WCs intensiv säubern</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-amassa-accent flex-shrink-0 mt-0.5"
+                  ></i>
+                  <span>Flexible Zeitfenster (auch nachts/früh morgens)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-600">
+                <i data-lucide="clock" class="w-4 h-4 inline mr-1"></i>
+                Verfügbar: Tag & Nacht
+              </div>
+              <a
+                href="kontakt.html"
+                class="bg-amassa-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-accent-light transition-all"
+              >
+                Paket buchen
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package Benefits -->
+        <div
+          class="bg-gradient-to-br from-yellow-50 to-white rounded-3xl p-8 md:p-12 border-2 border-amassa-accent/20"
+        >
+          <h3
+            class="text-3xl font-display font-bold text-amassa-blue mb-8 text-center"
+          >
+            Alle Pakete sind individuell anpassbar
+          </h3>
+          <p class="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
+            Jedes Zuhause ist anders. Sprechen Sie mit uns über Ihre
+            spezifischen Wünsche – wir passen jedes Paket gerne an Ihre
+            Bedürfnisse an.
+          </p>
+          <div class="text-center">
+            <a
+              href="kontakt.html"
+              class="inline-block bg-amassa-accent text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-amassa-accent-light shadow-xl transition-all"
+            >
+              Individuelle Offerte anfragen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section
+      class="py-20 bg-gradient-to-r from-amassa-accent via-amassa-accent-light to-amassa-accent text-white"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="text-4xl md:text-5xl font-display font-bold mb-6 text-amassa-blue"
+        >
+          Bereit für ein sauberes Zuhause?
+        </h2>
+        <p class="text-xl md:text-2xl mb-10 text-amassa-blue/90">
+          Buchen Sie jetzt Ihr Abo oder Paket – wir freuen uns auf Sie!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="kontakt.html"
+            class="bg-white text-amassa-accent px-10 py-5 rounded-xl font-bold text-lg hover:bg-gray-100 shadow-2xl transition-all"
+          >
+            Jetzt buchen
+          </a>
+          <a
+            href="tel:+41782662566"
+            class="bg-amassa-blue text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-amassa-blue-light shadow-2xl transition-all"
+          >
+            <span class="flex items-center justify-center gap-2">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              +41 78 266 25 66
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #0d1a2e 0%, #1a3050 100%);" class="text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <img
+                src="images/amassaLogo.png"
+                alt="AMASSA Reinigung & Hauswartung"
+                class="h-12 w-auto"
+              />
+            </div>
+            <p class="text-white/70 text-sm mb-6">
+              Ihr Partner für professionelle Reinigung und Hauswartung in der
+              ganzen Schweiz.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Reinigung</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="reinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Übersicht</a
+                >
+              </li>
+              <li>
+                <a
+                  href="baureinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Baureinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="bueroreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Büroreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="endreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Endreinigung / Umzug</a
+                >
+              </li>
+              <li>
+                <a
+                  href="praxisreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Praxisreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unterhaltsreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Unterhaltsreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#spezial"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Spezialreinigungen</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Unternehmen</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="hauswartung.html"
+                  class="hover:text-amassa-green transition-colors"
+                  >Hauswartung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="abos-pakete.html"
+                  class="hover:text-amassa-accent transition-colors font-bold text-white"
+                  >Abos & Pakete</a
+                >
+              </li>
+              <li>
+                <a
+                  href="referenzen.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Referenzen & Partner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ueber-uns.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Über uns</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Kontakt</h4>
+            <ul class="space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 flex-shrink-0 mt-0.5 text-amassa-teal"
+                ></i>
+                <div>Romanshornerstrasse 25<br />9300 Wittenbach</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="tel:+41782662566"
+                  class="hover:text-amassa-teal transition-colors"
+                  >+41 78 266 25 66</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="mailto:info@amassa.ch"
+                  class="hover:text-amassa-teal transition-colors"
+                  >info@amassa.ch</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+          >
+            <p class="text-white/60">
+              © 2026 AMASSA GmbH. Alle Rechte vorbehalten.
+            </p>
+            <div class="flex gap-6 text-white/60">
+              <a
+                href="impressum.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Impressum</a
+              >
+              <a
+                href="datenschutz.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Datenschutz</a
+              >
+              <a
+                href="agb.html"
+                class="hover:text-amassa-teal transition-colors"
+                >AGB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener("click", () =>
+          navMenu.classList.toggle("active")
+        );
+      }
+
+      // Theme toggle (Hell-/Dunkelmodus)
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem("amassa-theme") || "light";
+        htmlEl.setAttribute("data-theme", savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = htmlEl.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          htmlEl.setAttribute("data-theme", newTheme);
+          localStorage.setItem("amassa-theme", newTheme);
+          updateThemeIcon(newTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        document.querySelectorAll(".theme-icon").forEach(function (icon) {
+          icon.setAttribute("data-lucide", theme === "light" ? "sun" : "moon");
+        });
+        lucide.createIcons();
+      }
+    </script>
+  </body>
+</html>
